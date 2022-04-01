@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\FinanceController;
+use App\Http\Controllers\UserController;
+use App\Http\Livewire\Home;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +19,39 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/event', function () {
+    return view('event');
+});
+
+Route::get('/finance', function () {
+    return view('finance');
+});
+
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+
+Route::get('/admin', function () {
+    return view('admin/index');
+})->middleware('auth');
+
+Route::resource('/admin/event', EventController::class)->except('show')
+    ->names([
+        'index' => 'event',
+    ]);
+
+Route::resource('/admin/finance', FinanceController::class)->except('show');
+Route::resource('/admin/member', UserController::class)->except('show');
+
+Route::get('home', function(){
+    return view('home');
 });
