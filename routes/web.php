@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\UserController;
@@ -33,6 +34,7 @@ Route::get('/finance', function () {
     return view('finance');
 });
 
+
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
@@ -40,17 +42,20 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'
     })->name('dashboard');
 });
 
-Route::get('/admin', function () {
-    return view('admin/index');
-})->middleware('auth');
+Route::middleware(['auth', 'role:admin,super-admin'])->group(function(){
+    Route::get('/admin', [DashboardController::class, 'index']);
+    
+    Route::resource('/admin/event', EventController::class)->except('show');
+    Route::resource('/admin/finance', FinanceController::class)->except('show');
+    Route::resource('/admin/member', UserController::class)->except('show');
+    Route::post('/admin/member/import-excel', [UserController::class, 'import_excel']);
 
-Route::resource('/admin/event', EventController::class)->except('show')
-    ->names([
-        'index' => 'event',
-    ]);
+});
 
-Route::resource('/admin/finance', FinanceController::class)->except('show');
-Route::resource('/admin/member', UserController::class)->except('show');
+Route::middleware(['auth', 'role:super-admin'])->group(function(){
+    Route::put('/admin/role-update/{user}', [UserController::class, 'changeRole'])->name('role.update');
+});
+
 
 Route::get('home', function(){
     return view('home');

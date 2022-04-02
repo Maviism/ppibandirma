@@ -33,7 +33,7 @@
           </li>
           <li class="nav-header">Menu</li>
           <li class="nav-item">
-            <a href="{{route('event')}}" class="nav-link">
+            <a href="{{route('event.index')}}" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Event

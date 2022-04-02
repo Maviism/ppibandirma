@@ -6,11 +6,11 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
       <div class="container-fluid">
-        @if (session()->has('success'))
+        @if (session('status'))
             <div class="alert alert-success alert-dismissible">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
               <h5><i class="icon fas fa-check"></i> Alert!</h5>
-              {{ session()->get('success') }}
+              {{ session('status') }}
             </div>
         @elseif (count($errors) > 0)
           <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -48,11 +48,14 @@
               <!-- /.card-header -->
               <div class="card-body">
                 <a href="{{route('member.create')}}" class="btn btn-primary mb-2">Add Member</a>
-                <button href="{{route('member.create')}}" class="btn btn-primary mb-2" data-toggle="modal" data-target="#importExcel">Import</button>
+                <button class="btn btn-primary mb-2" data-toggle="modal" data-target="#importExcel">Import</button>
+                @if(Auth::user()->role== "super-admin")
+                <button class="btn btn-primary mb-2" data-toggle="modal" data-target="#importExcel">Export</button>
+                @endif
 
                 <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
-                    <form method="post" action="/siswa/import_excel" enctype="multipart/form-data">
+                    <form method="post" action="/admin/member/import-excel" enctype="multipart/form-data">
                       <div class="modal-content">
                         <div class="modal-header">
                           <h5 class="modal-title" id="exampleModalLabel">Import Excel</h5>
@@ -81,10 +84,12 @@
                   <thead>
                   <tr>
                     <th>Nama</th>
-                    <th>Phone</th>
                     <th>Email</th>
+                    <th>No Hp</th>
+                    <th>Gender</th>
                     <th>Fakultas-Prodi</th>
-                    <th>Kedatangan</th>
+                    <th>Status</th>
+                    <th>Send password</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -93,9 +98,33 @@
                     <tr>
                       <td>{{$user->name}}</td>
                       <td>{{$user->email}}</td>
-                      <td>{{$user->created_at}}</td>
-                      <td>{{$user->created_at}}</td>
-                      <td>{{$user->created_at}}</td>
+                      <td>{{$user->identity->phone_number}}</td>
+                      <td>{{$user->identity->gender}}</td>
+                      <td>{{$user->identity->fakultas_prodi}}</td>
+                      <td>
+                        @if(Auth::user()->role == "super-admin")
+                          <form action="{{ route('role.update', $user)}}" method="post">
+                            @csrf
+                            @method('PUT')
+                            <select name="role" class="form-control select2" style="width: 100%;" onchange='if(this.value != 0) { this.form.submit(); }'>
+                              <option selected="selected">{{$user->role}}</option>
+                              <option value="super-admin">Super-admin</option>
+                              <option value="admin">Admin</option>
+                              <option value="user">User</option>
+                            </select>
+                          </form
+                        @else
+                        <button class="btn btn-sm btn-primary" > {{$user->role}} </button>
+                        @endif
+                      </td>
+                      
+                      <td>
+                        <form action="{{ route('send.password') }}" method="POST">
+                          @csrf
+                          <input type="email" name="email" value="{{$user->email}}" hidden>
+                          <button type="submit" class="btn btn-sm btn-primary">Send password</button>
+                        </form>
+                      </td>
                       <td>
                         <form action="" method="POST">
                           @csrf

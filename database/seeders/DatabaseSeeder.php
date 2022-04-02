@@ -19,12 +19,55 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        User::create([
+        $user = User::create([
             'name' => "muadz izharul",
             'email' => "muadzihharul@gmail.com",
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
+            'role' => 'admin',
+        ]);
+
+        $user->identity()->create([
+            'fakultas_prodi' => 'teknik komputer',
+            'gender' => 'laki',
+            'passport_no' => 'c4dsdsad',
+            'phone_number' => '905525911215',
+            'user_id' => $user->id
+        ]);
+
+        $user1 = User::create([
+            'name' => "Super admin bos",
+            'email' => "muihharul@gmail.com",
+            'email_verified_at' => now(),
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'remember_token' => Str::random(10),
+            'role' => 'super-admin',
+        ]);
+
+        $user1->identity()->create([
+            'fakultas_prodi' => 'teknik komputer',
+            'gender' => 'laki',
+            'passport_no' => 'c4dsdsad',
+            'phone_number' => '905525911215',
+            'user_id' => $user1->id
+        ]);
+
+        $user2 = User::create([
+            'name' => "muadz izharul",
+            'email' => "muzihharul@gmail.com",
+            'email_verified_at' => now(),
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'remember_token' => Str::random(10),
+            'role' => 'user',
+        ]);
+
+        $user2->identity()->create([
+            'fakultas_prodi' => 'teknik komputer',
+            'gender' => 'laki',
+            'passport_no' => 'c4dsdsad',
+            'phone_number' => '905525911215',
+            'user_id' => $user2->id
         ]);
 
         Event::create([
