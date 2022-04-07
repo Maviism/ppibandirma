@@ -41,22 +41,23 @@
                   <div class="card-body">
                     <div class="form-group">
                         <label for="eventName">Nama acara</label>
-                        <input type="text" class="form-control" id="eventName" name="eventName" placeholder="Masukan nama acara">
+                        <input type="text" class="form-control @error('eventName', 'post') is-invalid @enderror" value="{{ old('eventName') }}" id="eventName" name="eventName" placeholder="Masukan nama acara">
+                        @error('eventName')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group">
                       <label for="eventPlace">Tempat acara</label>
                       <input type="text" class="form-control" id="eventPlace" name="eventPlace" placeholder="Masukan tempat acara">
                     </div>
-                    <!-- Date and time range -->
                     <div class="form-group">
-                      <label>Tanggal dan waktu acara:</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text"><i class="far fa-clock"></i></span>
+                      <label>Date and time:</label>
+                        <div class="input-group date" id="reservationdatetime" data-target-input="nearest">
+                            <input type="text" name="eventDate" placeholder="dd-mm-yyyy 00:00" class="form-control datetimepicker-input" data-target="#reservationdatetime"/>
+                            <div class="input-group-append" data-target="#reservationdatetime" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            </div>
                         </div>
-                        <input type="text" name="eventDate" class="form-control float-right" id="reservationtime">
-                      </div>
-                      <!-- /.input group -->
                     </div>
                     <div class="form-group">
                       <label for="image">Poster acara</label>

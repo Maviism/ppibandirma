@@ -10,7 +10,7 @@
                 <img class="inline-block h-10 w-10 rounded-full" src="{{Auth::user()->profile_photo_url}}" alt="" />
             </div>
             <div class="flex-1 px-2 pt-2 mt-2">
-                <textarea wire:model="opini" class=" bg-transparent text-gray-400 font-medium text-lg w-full" rows="2" cols="50" placeholder="What's happening?"></textarea>
+                <textarea wire:model="status" class=" bg-transparent text-gray-400 font-medium text-lg w-full" rows="2" cols="50" placeholder="What's happening?"></textarea>
             </div>                    
         </div>
         <!--Text box-->
@@ -28,18 +28,18 @@
     <div>
     </div>
 
-@foreach($opinions as $opini)
+@foreach($statuses as $status)
         <div class="flex flex-shrink-0 p-4 pb-0">
             <a href="#" class="flex-shrink-0 group block">
                 <div class="flex items-center">
                 <div>
-                    <img class="inline-block h-10 w-10 rounded-full" src="{{$opini->user->profile_photo_url}}" alt="" />
+                    <img class="inline-block h-10 w-10 rounded-full" src="{{$status->user->profile_photo_url}}" alt="" />
                 </div>
                 <div class="ml-3">
                     <p class="text-base leading-6 font-medium text-gray-700">
-                    {{ $opini->user->name}} 
+                    {{ $status->user->name}} 
                     <span class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                    • {{$opini->created_at}}
+                    • {{$status->created_at}}
                         </span>
                         </p>
                 </div>
@@ -48,7 +48,7 @@
         </div>
         <div class="pl-16 pr-2">
             <p class="text-base width-auto font-medium text-black-800 flex-shrink">
-                {{$opini->opini}}
+                {{$status->status}}
             </p>
             <div class="flex">
                 <!-- Icon -->
@@ -56,7 +56,7 @@
                     <div class="flex items-center">
                         <div class="flex-1 text-center">
                             <a href="#" class="w-12 mt-1 group flex items-center text-gray-500 px-3 py-2 text-base leading-6 font-medium rounded-full hover:bg-blue-800 hover:text-blue-300">
-                                <svg class="text-center h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                                <svg class="text-center h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg> {{$status->comment->count()}}
                                 </a>
                         </div>
 

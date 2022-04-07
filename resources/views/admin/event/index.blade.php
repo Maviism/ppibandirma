@@ -64,7 +64,7 @@
                   <tr>
                     <td>{{$event->event_name}}</td>
                     <td>{{$event->event_place}}</td>
-                    <td>{{$event->date}}</td>
+                    <td>{{$event->dateFormat()}}</td>
                     <td>
                       <form action="{{route('event.destroy', $event)}}" method="POST">
                         @csrf

@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Opinion extends Model
+class Comment extends Model
 {
     use HasFactory;
 
@@ -14,11 +14,14 @@ class Opinion extends Model
         return $this->belongsTo(User::class);
     }
 
-    protected $fillable = ['opini', 'user_id'];
+    public function status(){
+        return $this->belongsTo(User::class);
+    }
+
+    protected $fillable = ['status', 'user_id'];
 
     public function getCreatedAtAttribute(){
         return Carbon::parse($this->attributes['created_at'])
             ->diffForHumans();
     }
-    
 }

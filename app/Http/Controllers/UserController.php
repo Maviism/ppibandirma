@@ -73,4 +73,10 @@ class UserController extends Controller
 
         return redirect('/admin/member');
     }
+
+    public function activate(User $user){
+        $user->sendEmailVerificationNotification();
+        
+        return back()->with('status', 'verification-link-sent');
+    }
 }

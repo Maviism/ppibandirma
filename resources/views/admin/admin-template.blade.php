@@ -122,30 +122,28 @@
       "autoWidth": false,
       "responsive": true,
     });
-  });
-
-  $('#reservationtime').daterangepicker({
-    timePicker: true,
-    timePickerIncrement: 30,
-    locale: {
-      format: 'MM/DD/YYYY hh:mm A'
-    }
+    
+    //Date and time picker
+    $('#reservationdatetime').datetimepicker({ 
+      icons: { time: 'far fa-clock' },
+      format: 'DD-MM-YYYY HH:mm:ss', 
     });
+    
+  });
+  // Summernote
+  $('#summernote').summernote({
+    height: 300,
+    toolbar: [
+        // [groupName, [list of button]]
+        ['style', ['bold', 'italic', 'underline', 'clear']],
+        ['font', ['strikethrough', 'superscript', 'subscript']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['height', ['height']]
+      ],
+  })
 
-    // Summernote
-    $('#summernote').summernote({
-      height: 300,
-      toolbar: [
-          // [groupName, [list of button]]
-          ['style', ['bold', 'italic', 'underline', 'clear']],
-          ['font', ['strikethrough', 'superscript', 'subscript']],
-          ['color', ['color']],
-          ['para', ['ul', 'ol', 'paragraph']],
-          ['height', ['height']]
-        ],
-    })
-
-    function readURL(input){
+  function readURL(input){
     if(input.files && input.files[0]){
       const reader = new FileReader();
 
@@ -157,6 +155,7 @@
       reader.readAsDataURL(input.files[0])
     }
   }
+
   $('#image').change(function(){
     readURL(this)
   });

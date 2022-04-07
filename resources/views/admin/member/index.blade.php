@@ -88,8 +88,8 @@
                     <th>No Hp</th>
                     <th>Gender</th>
                     <th>Fakultas-Prodi</th>
+                    <th>Jabatan</th>
                     <th>Status</th>
-                    <th>Send password</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -98,9 +98,9 @@
                     <tr>
                       <td>{{$user->name}}</td>
                       <td>{{$user->email}}</td>
-                      <td>{{$user->identity->phone_number}}</td>
-                      <td>{{$user->identity->gender}}</td>
-                      <td>{{$user->identity->fakultas_prodi}}</td>
+                      <td>{{$user->identity->phone_number ?? '-'}}</td>
+                      <td>{{$user->identity->gender ?? '-'}}</td>
+                      <td>{{$user->identity->fakultas_prodi ?? '-'}}</td>
                       <td>
                         @if(Auth::user()->role == "super-admin")
                           <form action="{{ route('role.update', $user)}}" method="post">
@@ -114,31 +114,91 @@
                             </select>
                           </form
                         @else
-                        <button class="btn btn-sm btn-primary" > {{$user->role}} </button>
+                        <p> {{$user->role}} </p>
                         @endif
                       </td>
                       
                       <td>
-                        <form action="{{ route('send.password') }}" method="POST">
-                          @csrf
-                          <input type="email" name="email" value="{{$user->email}}" hidden>
-                          <button type="submit" class="btn btn-sm btn-primary">Send password</button>
-                        </form>
-                      </td>
-                      <td>
+                        @if($user->email_verified_at)
                         <form action="" method="POST">
                           @csrf
-                          @method('DELETE')
+                          <button type="submit" class="btn btn-sm btn-success">Aktif</button>
+                        </form>
+                        @else
+                        <form action="{{ route('member.activate', $user) }}" method="POST">
+                          @csrf
+                          <input type="text" name="email" value="" hidden>
+                          <button type="submit" class="btn btn-sm btn-danger">Nonaktif</button>
+                        </form>
+                        @endif
+                      </td>
+                      <td>
                           <a href="" class="btn btn-warning">
                             <i class="fas fa-pencil-alt"></i>
                           </a>
-                          <a href="" class="btn btn-info">
+                          
+                          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-lg{{$user->id}}">
                             <i class="fas fa-eye"></i>
-                          </a>
-                          <button type="submit" class="btn btn-danger">
-                            <i class="fas fa-trash"></i>
                           </button>
-                        </form>
+                          <div class="modal fade" id="modal-lg{{$user->id}}">
+                            <div class="modal-dialog modal-lg">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h4 class="modal-title">Profile {{$user->name}}</h4>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                <form class="form-horizontal">
+                                  <div class="card-body">
+                                    <div class="form-group row">
+                                      <label for="nama" class="col-sm-2 col-form-label">Nama</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="nama" placeholder="" value="{{$user->name}}">
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                      <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email" value="{{$user->email}}">
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label for="nama" class="col-sm-2 col-form-label">Jurusan</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="nama" placeholder="" value="{{$user->identity->fakultas_prodi ?? '-'}}">
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label for="nama" class="col-sm-2 col-form-label">No Handphone</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="nama" placeholder="" value="{{$user->identity->fakultas_prodi ?? '-'}}">
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                                      <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <!-- /.card-footer -->
+                                </form>
+                                </div>
+                                <div class="modal-footer justify-content-end">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-primary">Edit</button>
+                                </div>
+                              </div>
+                              <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                          </div>
+                          <!-- /.modal -->
+                          <!-- <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-trash"></i>
+                          </button> -->
                       </td>  
                     </tr>
                     @endforeach

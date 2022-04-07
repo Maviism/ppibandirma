@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Comment;
 use App\Models\Event;
 use App\Models\Opinion;
+use App\Models\Status;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -73,7 +75,7 @@ class DatabaseSeeder extends Seeder
         Event::create([
             'event_name' => "World water day",
             'event_place' => "Zoom meeting",
-            'date' => '04/01/2022 12:00 AM - 04/01/2022 11:59 PM',
+            'date' => '04-01-2022 12:00',
             'thumbnail' => "image.jpeg",
             'description' => "Masukan <em>deskripsi</em> <u>acara</u> <strong>disini</strong>"
         ]);
@@ -81,7 +83,7 @@ class DatabaseSeeder extends Seeder
         Event::create([
             'event_name' => "Hari tanpa air",
             'event_place' => "Zoom meeting",
-            'date' => '04/01/2022 12:00 AM - 04/01/2022 11:59 PM',
+            'date' => '04-01-2022 12:00',
             'thumbnail' => "image.jpeg",
             'description' => "Masukan <em>deskripsi</em> <u>acara</u> <strong>disini</strong>"
         ]);
@@ -89,15 +91,28 @@ class DatabaseSeeder extends Seeder
         Event::create([
             'event_name' => "World birth day",
             'event_place' => "Zoom meeting",
-            'date' => '04/01/2022 12:00 AM - 04/01/2022 11:59 PM',
+            'date' => '04-01-2022 12:00',
             'thumbnail' => "image.jpeg",
             'description' => "Masukan <em>deskripsi</em> <u>acara</u> <strong>disini</strong>"
         ]);
 
-        Opinion::create([
-            'opini' => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates nisi neque saepe impedit eius iusto ex in ratione consequatur est!",
+        Status::create([
+            'status' => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates nisi neque saepe impedit eius iusto ex in ratione consequatur est!",
             'user_id' => 1 
         ]);
+
+        Comment::create([
+            'comment' => "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates nisi neque saepe impedit eius iusto ex in ratione consequatur est!",
+            'user_id' => 1,
+            'status_id' => 1,
+        ]);
+
+        Comment::create([
+            'comment' => "Xommentar",
+            'user_id' => 1,
+            'status_id' => 1,
+        ]);
+
 
     }
 }

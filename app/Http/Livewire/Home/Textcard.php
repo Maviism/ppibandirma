@@ -2,25 +2,25 @@
 
 namespace App\Http\Livewire\Home;
 
-use App\Models\Opinion;
+use App\Models\Status;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Textcard extends Component
 {
-    public $opinions = [];
-    public $opini;
+    public $statuses = [];
+    public $status;
 
     protected $listeners = [
         'opiniCreated'
     ];
 
     public function opiniCreated($id){
-        $this->opinions = Opinion::orderBy('id', 'desc')->get();
+        $this->statuses = Status::orderBy('id', 'desc')->get();
     }
 
     public function mount(){
-        $this->opinions = Opinion::orderBy('id', 'desc')->get();
+        $this->statuses = Status::orderBy('id', 'desc')->get();
     }
 
     public function render()
@@ -29,14 +29,14 @@ class Textcard extends Component
     }
 
     public function store(){
-        $opini = Opinion::create([
-            'opini' => $this->opini,
+        $status = Status::create([
+            'status' => $this->status,
             'user_id' => Auth::user()->id
         ]);
 
-        $this->opini = '';
+        $this->status = '';
 
-        $this->emit('opiniCreated', $opini->id);
+        $this->emit('opiniCreated', $status->id);
     }
 
 }

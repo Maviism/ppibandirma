@@ -21,13 +21,15 @@ class Event extends Model
         'description',
     ];
 
-    public function getCreatedAtAttribute(){
-        return Carbon::parse($this->attributes['date'])
-            ->diffForHumans();
+    public function dateFormat(){
+        $dt = Carbon::parse($this->attributes['date']);
+        return $dt->isoFormat('dddd, D MMMM Y');
     }
 
     public function limitText(){
         return Str::limit($this->description, Event::LIMIT);
     }
+
+
 
 }

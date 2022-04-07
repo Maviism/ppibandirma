@@ -5,6 +5,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\UserController;
 use App\Http\Livewire\Home;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Auth::routes(['verify' => true]);
 
 Route::get('/', function () {
     return view('welcome');
@@ -37,18 +40,19 @@ Route::get('/finance', function () {
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    // Route::get('/', function () {
+    //     return view('welcome');
+    // })->name('dashboard');
 });
 
-Route::middleware(['auth', 'role:admin,super-admin'])->group(function(){
+Route::middleware(['auth', 'role:admin,super-admin', 'verified'])->group(function(){
     Route::get('/admin', [DashboardController::class, 'index']);
     
     Route::resource('/admin/event', EventController::class)->except('show');
     Route::resource('/admin/finance', FinanceController::class)->except('show');
     Route::resource('/admin/member', UserController::class)->except('show');
     Route::post('/admin/member/import-excel', [UserController::class, 'import_excel']);
+    Route::post('/admin/member/activate/{user}', [UserController::class, 'activate'])->name('member.activate');
 
 });
 
@@ -57,6 +61,3 @@ Route::middleware(['auth', 'role:super-admin'])->group(function(){
 });
 
 
-Route::get('home', function(){
-    return view('home');
-});
