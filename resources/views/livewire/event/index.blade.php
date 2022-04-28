@@ -1,31 +1,96 @@
 <div>
-    <main class="p-6">
-        <div class="text-center font-bold mb-4 -mt-5">UPCOMING EVENT</div>
-        <div class="grid sm:grid-cols-2 grid-cols-2 md:grid-cols-3 grid flow-col gap-4">
-            <!-- Card -->
-            @foreach($events as $event)
-            <a href="#" class="flex flex-col items-start bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                <img class="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="/storage/event/image.jpeg" alt="">
-                <div class="flex flex-col p-3 leading-normal">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{$event->event_name}}</h5>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                    {!! Str::limit($event->description) !!}</p>
-                    <div class="items-end">
-                        <div>
-                            <i class="nav-icon fas fa-map-signs"></i>
-                            <p class="inline" >{{$event->event_place}}</p>
-                        </div>
-                        <div>
-                            <i class="nav-icon far fa-calendar-alt"></i>
-                            <p class="inline" >{{$event->date}}</p>
-                        </div>
-                    </div>
+<div class="container px-4 flex-grow w-full py-4 sm:py-16 mx-auto px-0">
+      <h1
+        class="text-center text-3xl mb-4 uppercase bg-white text-gray-700 mx-auto px-2"
+      >
+        Event
+      </h1>
+      <div class="mx-auto w-full md:w-4/5 px-4">
+        <div class="container my-8">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="text-3xl font-medium">
+              Upcoming Event
+              <a href="#" class=""
+                ><span
+                  class="text-salmon font-medium text-lg ml-2 hover:underline"
+                  >See all
+                </span></a
+              >
+            </h2>
+            <div>
+              <button
+                class="cursor-pointer text-xl mx-1 text-indigo-600 font-bold"
+              >
+                <<
+              </button>
+              <button
+                class="cursor-pointer text-xl mx-1 text-indigo-600 font-bold"
+              >
+                >>
+              </button>
+            </div>
+          </div>
+          <div id="scrollContainer" class="flex flex-no-wrap overflow-x-scroll no-scrollbar scrolling-touch items-start mb-8">
+            <div class="flex-none w-2/3 md:w-1/3 mr-8 md:pb-4 border rounded-lg">
+              <a href="#" class="space-y-4">
+                <div class="aspect-w-16 aspect-h-9">
+                  <img class="object-cover shadow-md hover:shadow-xl rounded-lg" src="https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixqx=3H1AJd0Pae&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="" />
                 </div>
-            </a>
-            @endforeach
-                     
+                <div class="px-4 py-2">
+                  <div class="text-lg leading-6 font-medium space-y-1">
+                    <h3 class="font-bold text-gray-800 text-3xl mb-2">
+                      Some title goes here
+                    </h3>
+                  </div>
+                  <div class="text-lg">
+                    <p class="">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Ad recusandae, consequatur corrupti vel quisquam id itaque
+                      nam
+                    </p>
+                    <p class="font-medium text-sm text-indigo-600 mt-2">
+                      Read more<span class="text-indigo-600">&hellip;</span>
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            
+            <div
+              class="flex-none w-2/3 md:w-1/3 mr-8 md:pb-4 border rounded-lg"
+            >
+              <a href="#" class="space-y-4">
+                <div class="aspect-w-16 aspect-h-9">
+                  <img
+                    class="object-cover shadow-md hover:shadow-xl rounded-lg"
+                    src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixqx=3H1AJd0Pae&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
+                    alt=""
+                  />
+                </div>
+                <div class="px-4 py-2">
+                  <div class="text-lg leading-6 font-medium space-y-1">
+                    <h3 class="font-bold text-gray-800 text-3xl mb-2">
+                      Some title goes here
+                    </h3>
+                  </div>
+                  <div class="text-lg">
+                    <p class="">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Ad recusandae, consequatur corrupti vel quisquam id itaque
+                      nam
+                    </p>
+                    <p class="font-medium text-sm text-indigo-600 mt-2">
+                      Read more<span class="text-indigo-600">&hellip;</span>
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
-    </main>
+        <!---->
+      </div>
+    </div>
 </div>
 
 

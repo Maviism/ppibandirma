@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('identities', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
             // $table->string('tanggal_lahir');
             $table->enum('gender', ['laki', 'perempuan']);
             // $table->enum('married', ['sudah', 'belum']);

@@ -33,6 +33,14 @@
           </li>
           <li class="nav-header">Menu</li>
           <li class="nav-item">
+            <a href="{{route('member.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                Member
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{route('event.index')}}" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
@@ -45,14 +53,6 @@
               <i class="nav-icon fas fa-money-bill"></i>
               <p>
                 Finance
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{route('member.index')}}" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
-              <p>
-                Member
               </p>
             </a>
           </li>

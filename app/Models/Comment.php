@@ -18,7 +18,11 @@ class Comment extends Model
         return $this->belongsTo(User::class);
     }
 
-    protected $fillable = ['status', 'user_id'];
+    public function like(){
+        return $this->belongsToMany(Like::class);
+    }
+
+    protected $fillable = ['status_id', 'user_id', 'comment'];
 
     public function getCreatedAtAttribute(){
         return Carbon::parse($this->attributes['created_at'])

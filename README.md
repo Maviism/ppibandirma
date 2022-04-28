@@ -18,8 +18,11 @@
 - Git clone 
 - Composer install
 - php artisan key:generate
-- copy .env.example
-- set database name and password
+- copy .env.example .env
+- set .env (
+    - db name and pass
+    - smtp server
+- Migration
 
 ## make a pull request
 
