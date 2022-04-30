@@ -16,7 +16,7 @@ class Textcard extends Component
     
 
     protected $listeners = [
-        'opiniCreated'
+        'statusCreated'
     ];
 
     public function likeStatus($id){
@@ -57,10 +57,10 @@ class Textcard extends Component
 
         $this->status = '';
 
-        $this->emit('opiniCreated', $status->id);
+        $this->emit('statusCreated', $status->id);
     }
 
-    public function opiniCreated($id){
+    public function statusCreated($id){
         $this->statuses = Status::orderBy('id', 'desc')->get();
     }
 

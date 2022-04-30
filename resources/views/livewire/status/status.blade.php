@@ -29,7 +29,7 @@
                     <div class="w-full">
                         <div class="flex items-center">
                             <div class="flex-1 text-center">
-                                <a href="status/{{$status->id}}" class="w-12 mt-1 group flex items-center text-gray-500 px-3 py-2 text-base leading-6 font-medium rounded-full hover:bg-blue-800 hover:text-blue-300">
+                                <a href="" class="w-12 mt-1 group flex items-center text-gray-500 px-3 py-2 text-base leading-6 font-medium rounded-full hover:bg-blue-800 hover:text-blue-300">
                                     <svg class="text-center h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg> {{$status->comment->count()}}
                                 </a>
                             </div>
@@ -54,32 +54,7 @@
             <hr class="border-gray-600 h-5">
             <hr>
 
-            <hr class="border-gray-600">
-            <!--middle creat tweet-->
-            <!-- Post -->
-            @auth
-            <form wire:submit.prevent="store({{$status->id}})">
-            <div>
-                <div class="flex">
-                    <div class="m-2 w-10 py-1">
-                        <img class="inline-block h-10 w-10 rounded-full" src="{{Auth::user()->profile_photo_url}}" alt="" />
-                    </div>
-                    <div class="flex-1 px-2 pt-2 mt-2">
-                        <textarea wire:model="commentVal" class=" bg-transparent text-gray-400 font-medium text-lg w-full" rows="2" cols="50" placeholder="write your opini..."></textarea>
-                    </div>                    
-                </div>
-                <!--Text box-->
-                <div class="flex">
-                    <div class="flex-1">
-                        <button type="submit" class="bg-blue-400 mt-2 mb-2 hover:bg-blue-600 text-white font-bold py-2 px-8 rounded-full mr-8 float-right">
-                            Comment
-                        </button>
-                    </div>
-                </div>
-            </div> <!-- End post -->
-            <hr class="border-gray-500 border">
-            </form>
-            @endauth
+            
             @foreach($comments as $comment)
             <div class="flex flex-shrink-0 p-4 pb-0">
                 <a href="#" class="flex-shrink-0 group block">
@@ -107,17 +82,52 @@
                     <div class="w-full">
                         <div class="flex items-center">
                             <div class="flex-1 text-center py-2 m-2">
-                                <a href="#" class="w-12 mt-1 group flex items-center text-gray-500 px-3 py-2 text-base leading-6 font-medium rounded-full hover:bg-blue-800 hover:text-blue-300">
-                                    <svg class="text-center h-7 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-                                </a>
-                            </div>    
+                                @if(in_array($comment->id, $likesComment))
+                                <button wire:click="unlikeComment({{$comment->id}})">
+                                   <i class="fa fa-heart text-red-600" aria-hidden="true"></i>
+                                   <span>{{ $comment->like->count() }}</span>
+                                </button>
+                                @else
+                                <button wire:click="likeComment({{$comment->id}})">
+                                    <i class="far fa-heart bg-red likeBtn pull-right" aria-hidden="true"></i>
+                                    {{ $comment->like->count() }}
+                                </button>
+                                @endif
+                            </div>   
                         </div>
                     </div>
                 </div>
                 
             </div><!-- End first tweet -->
             <hr class="border-gray-600">
-            @endforeach       
+            @endforeach
+            
+            <hr class="border-gray-600">
+            <!--middle creat tweet-->
+            <!-- Post -->
+            @auth
+            <form wire:submit.prevent="store({{$status->id}})">
+            <div>
+                <div class="flex">
+                    <div class="m-2 w-10 py-1">
+                        <img class="inline-block h-10 w-10 rounded-full" src="{{Auth::user()->profile_photo_url}}" alt="" />
+                    </div>
+                    <div class="flex-1 px-2 pt-2 mt-2">
+                        <textarea wire:model="commentVal" class=" bg-transparent text-gray-400 font-medium text-lg w-full" rows="2" cols="50" placeholder="bagaimana tanggapan lesti..."></textarea>
+                    </div>                    
+                </div>
+                <!--Text box-->
+                <div class="flex">
+                    <div class="flex-1">
+                        <button type="submit" class="bg-blue-400 mt-2 mb-2 hover:bg-blue-600 text-white font-bold py-2 px-8 rounded-full mr-8 float-right">
+                            Comment
+                        </button>
+                    </div>
+                </div>
+            </div> <!-- End post -->
+            <hr class="border-gray-500 border">
+            </form>
+            @endauth
 
         </div>
     </div>

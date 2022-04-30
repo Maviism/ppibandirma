@@ -19,7 +19,7 @@ class Comment extends Model
     }
 
     public function like(){
-        return $this->belongsToMany(Like::class);
+        return $this->hasMany(Like::class);
     }
 
     protected $fillable = ['status_id', 'user_id', 'comment'];
