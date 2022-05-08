@@ -17,8 +17,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->nullable();
             $table->string('event_name');
-            $table->string('event_place')->nullable();
+            $table->string('slug');
+            $table->string('place')->nullable();
             $table->text('date')->nullable();
+            $table->text('time')->nullable();
             $table->string('thumbnail')->nullable();
             $table->text('description');
             $table->timestamps();

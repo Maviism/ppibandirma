@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\UserController;
+use App\Http\Livewire\Event\Detail as EventDetail;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\Status\Status;
 use Illuminate\Support\Facades\Auth;
@@ -31,9 +32,12 @@ Route::get('/home', function () {
 
 Route::get('/status/{id}', Status::class)->middleware('auth');
 
+
 Route::get('/event', function () {
     return view('event');
 });
+
+Route::get('/event/{slug}', EventDetail::class);
 
 Route::get('/finance', function () {
     return view('finance');
