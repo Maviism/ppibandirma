@@ -9,7 +9,7 @@
                 <a href="/home" class="ml-0 mr-0 font-bold duration-100 md:ml-12 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Home</a>
                 <a href="/search" class="ml-0 mr-0 font-bold duration-100 md:hidden transition-color hover:text-indigo-600">Search</a>
                 <a href="/event" class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Event</a>
-                <a href="/finance" class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Keuangan</a>
+                <a href="/finance" class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Society</a>
                 
                 <!-- Mobile -->
                 @if (Route::has('login'))

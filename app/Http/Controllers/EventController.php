@@ -40,7 +40,7 @@ class EventController extends Controller
 
             Event::create([
                 'event_name' => $request->eventName,
-                'event_place' => $request->eventPlace,
+                'place' => $request->eventPlace,
                 'date' => $request->eventDate,
                 'thumbnail' => $file_name, 
                 'description' => $request->description,
@@ -49,7 +49,7 @@ class EventController extends Controller
         }else{
             Event::create([
                 'event_name' => $request->eventName,
-                'event_place' => $request->eventPlace,
+                'place' => $request->eventPlace,
                 'date' => $request->eventDate, 
                 'description' => $request->description,
             ]);
@@ -85,7 +85,7 @@ class EventController extends Controller
 
             $event->update([
                 'event_name' => $request->eventName,
-                'event_place' => $request->eventPlace,
+                'place' => $request->eventPlace,
                 'date' => $request->eventDate,
                 'thumbnail' => $file_name, 
                 'description' => $request->description,
@@ -94,14 +94,14 @@ class EventController extends Controller
         }else{
             $event->update([
                 'event_name' => $request->eventName,
-                'event_place' => $request->eventPlace,
+                'place' => $request->eventPlace,
                 'date' => $request->eventDate, 
                 'description' => $request->description,
             ]);
         }
         $event->update([
             'event_name' => $request->eventName,
-            'event_place' => $request->eventPlace,
+            'place' => $request->eventPlace,
             'date' => $request->eventDate,
             'description' => $request->description,
         ]);
