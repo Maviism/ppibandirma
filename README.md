@@ -17,8 +17,8 @@
 
 - Git clone 
 - Composer install
-- php artisan key:generate
 - copy .env.example .env
+- php artisan key:generate
 - set .env (
     - db name and pass
     - smtp server
