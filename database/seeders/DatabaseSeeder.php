@@ -31,11 +31,14 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $user->identity()->create([
-            'fakultas_prodi' => 'teknik komputer',
+            'faculty' => 'teknik komputer',
             'gender' => 'laki',
-            'passport_no' => 'c4dsdsad',
+            'university' => 'Bandirma onyedi eylul',
+            'married' => 'sudah',
+            'student_no' => '201502208',
+            'date_of_birth' => '20/20/1999',
             'phone_number' => '905525911215',
-            'user_id' => $user->id
+            'user_id' => $user->id,
         ]);
 
         $user1 = User::create([
@@ -48,11 +51,14 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $user1->identity()->create([
-            'fakultas_prodi' => 'teknik komputer',
+            'faculty' => 'teknik komputer',
             'gender' => 'laki',
-            'passport_no' => 'c4dsdsad',
             'phone_number' => '905525911215',
-            'user_id' => $user1->id
+            'user_id' => $user1->id,
+            'date_of_birth' => '20/20/1999',
+            'university' => 'Bandirma onyedi eylul',
+            'married' => 'belum',
+            'student_no' => '201502209',
         ]);
 
         $user2 = User::create([
@@ -65,11 +71,14 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $user2->identity()->create([
-            'fakultas_prodi' => 'teknik komputer',
+            'faculty' => 'teknik komputer',
             'gender' => 'laki',
-            'passport_no' => 'c4dsdsad',
             'phone_number' => '905525911215',
-            'user_id' => $user2->id
+            'user_id' => $user2->id,
+            'date_of_birth' => '20/20/1999',
+            'university' => 'Bandirma onyedi eylul',
+            'married' => 'sudah',
+            'student_no' => '201502210',
         ]);
 
         Event::create([

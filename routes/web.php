@@ -43,6 +43,10 @@ Route::get('/finance', function () {
     return view('finance');
 });
 
+Route::get('/kirimemail', function(){
+    return view('user-email');
+});
+
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'
 ])->group(function () {

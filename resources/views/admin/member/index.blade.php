@@ -47,9 +47,9 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
+                @if(Auth::user()->role == "super-admin")
                 <a href="{{route('member.create')}}" class="btn btn-primary mb-2">Add Member</a>
                 <button class="btn btn-primary mb-2" data-toggle="modal" data-target="#importExcel">Import</button>
-                @if(Auth::user()->role== "super-admin")
                 <button class="btn btn-primary mb-2" data-toggle="modal" data-target="#importExcel">Export</button>
                 @endif
 
@@ -133,10 +133,12 @@
                         @endif
                       </td>
                       <td>
+                          @if(Auth::user()->role == "super-admin")
                           <a href="" class="btn btn-warning">
                             <i class="fas fa-pencil-alt"></i>
                           </a>
-                          
+                          @endif
+
                           <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-lg{{$user->id}}">
                             <i class="fas fa-eye"></i>
                           </button>
@@ -153,33 +155,75 @@
                                 <form class="form-horizontal">
                                   <div class="card-body">
                                     <div class="form-group row">
+                                      <label for="nama" class="col-sm-2 col-form-label">No pelajar</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="nama" placeholder="" value="{{$user->name}}" disabled>
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
                                       <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                                       <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="nama" placeholder="" value="{{$user->name}}">
+                                        <input type="text" class="form-control" id="nama" placeholder="" value="{{$user->name}}" disabled>
                                       </div>
                                     </div>
                                     <div class="form-group row">
                                       <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                                       <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email" value="{{$user->email}}">
-                                      </div>
-                                    </div>
-                                    <div class="form-group row">
-                                      <label for="nama" class="col-sm-2 col-form-label">Jurusan</label>
-                                      <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="nama" placeholder="" value="{{$user->identity->fakultas_prodi ?? '-'}}">
+                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email" value="{{$user->email}}" disabled>
                                       </div>
                                     </div>
                                     <div class="form-group row">
                                       <label for="nama" class="col-sm-2 col-form-label">No Handphone</label>
                                       <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="nama" placeholder="" value="{{$user->identity->fakultas_prodi ?? '-'}}">
+                                        <input type="text" class="form-control" id="nama" placeholder="" value="{{$user->identity->fakultas_prodi ?? '-'}}" disabled>
                                       </div>
                                     </div>
                                     <div class="form-group row">
-                                      <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                                      <label for="nama" class="col-sm-2 col-form-label">Universitas</label>
                                       <div class="col-sm-10">
-                                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                        <input type="text" class="form-control" id="nama" placeholder="" value="{{$user->identity->fakultas_prodi ?? '-'}}" disabled>
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label for="nama" class="col-sm-2 col-form-label">Fakultas</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="nama" placeholder="" value="{{$user->identity->fakultas_prodi ?? '-'}}" disabled>
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label for="nama" class="col-sm-2 col-form-label">Jurusan</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="nama" placeholder="" value="{{$user->identity->fakultas_prodi ?? '-'}}" disabled>
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label for="nama" class="col-sm-2 col-form-label">Agama</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="nama" placeholder="" value="{{$user->identity->fakultas_prodi ?? '-'}}" disabled>
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label for="nama" class="col-sm-2 col-form-label">Menikah</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="nama" placeholder="" value="{{$user->identity->fakultas_prodi ?? '-'}}" disabled>
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label for="nama" class="col-sm-2 col-form-label">Alamat</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="nama" placeholder="" value="{{$user->identity->fakultas_prodi ?? '-'}}" disabled>
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label for="nama" class="col-sm-2 col-form-label">Goldar</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="nama" placeholder="" value="{{$user->identity->fakultas_prodi ?? '-'}}" disabled>
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label for="nama" class="col-sm-2 col-form-label">Tanggal lahir</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="nama" placeholder="" value="{{$user->identity->fakultas_prodi ?? '-'}}" disabled>
                                       </div>
                                     </div>
                                   </div>
@@ -188,7 +232,9 @@
                                 </div>
                                 <div class="modal-footer justify-content-end">
                                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                  <button type="button" class="btn btn-primary">Edit</button>
+                                  @if(Auth::user()->role == "super-admin")
+                                  <a type="button" class="btn btn-primary">Edit data</a>
+                                  @endif
                                 </div>
                               </div>
                               <!-- /.modal-content -->

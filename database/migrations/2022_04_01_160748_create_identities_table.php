@@ -14,26 +14,20 @@ return new class extends Migration
     public function up()
     {
         Schema::create('identities', function (Blueprint $table) {
-            $table->id();
             $table->foreignId('user_id');
-            // $table->string('tanggal_lahir');
             $table->enum('gender', ['laki', 'perempuan']);
-            // $table->enum('married', ['sudah', 'belum']);
-            $table->string('fakultas_prodi');
-            // $table->string('tahun_kedatangan');
-            // $table->string('tahun_kelulusan');
-            // $table->string('Agama');
-            // $table->string('kartu_pelajar');
-            // $table->string('pas_foto');
+            $table->enum('married', ['sudah', 'belum']);
+            $table->string('religion')->nullable();
+            $table->string('arrival_year')->nullable();
+            $table->string('student_no')->unique();
+            $table->string('university');
+            $table->string('faculty')->nullable();
+            $table->string('departman')->nullable();
+            $table->string('date_of_birth');
+            $table->string('blood_type')->nullable();
             $table->string('phone_number');
-            // $table->string('student_no');
-            $table->string('passport_no');
-            // $table->string('ikamet_no');
-            // $table->string('address_tr');
-            // $table->string('address_id');
-            // $table->string('father_name');
-            // $table->string('mother_name');
-            // $table->string('parent_phone_number');
+            $table->string('parent_phone_number')->nullable();
+            $table->string('address_tr')->nullable();
             $table->timestamps();
         });
     }

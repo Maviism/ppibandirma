@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Imports\UserImport;
+use App\Mail\UserActivate;
+use App\Models\Identity;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -25,7 +28,49 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email:rfc,dns|unique:users',
+            'phoneNumber' => 'nullable',
+            'birthDay' => 'required',
+            'married' => 'nullable',
+            'gender' => 'nullable',
+            'religion' => 'nullable',
+            'address' => 'nullable',
+            'bloodType' => 'nullable',
+            'student_no' => 'required|unique:identities',
+            'arrivalYear' => 'nullable',
+            'university' => 'nullable',
+            'faculty' => 'nullable',
+            'departman' => 'nullable',
+        ]);
+
+    // dd('hello');     
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'email_verified_at' => now(),
+            'role' => 'user'
+        ]);
+
+        Identity::create([
+            'user_id' => $user->id,
+            'phone_number' => $request->phoneNumber,
+            'date_of_birth' => $request->birthDay,
+            'married' => $request->married,
+            'gender' => $request->gender,
+            'religion' => $request->religion,
+            'address_tr' => $request->address,
+            'blood_type' => $request->bloodType,
+            'student_no' => $request->student_no,
+            'arrival_year' => $request->arrivalYear,
+            'university' => $request->university,
+            'faculty' => $request->faculty,
+            'departman' => $request->departman,
+        ]);
+        
+        session()->flash('success', 'Berhasil menambah member {$user->name}!');
+        return redirect()->route('member.index');
     }
 
     public function show($id)
@@ -75,8 +120,7 @@ class UserController extends Controller
     }
 
     public function activate(User $user){
-        $user->sendEmailVerificationNotification();
-        
-        return back()->with('status', 'verification-link-sent');
+
+        return "email terkirim";
     }
 }

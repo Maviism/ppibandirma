@@ -111,7 +111,7 @@
   $(function () {
     $("#example1").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      "buttons": ["colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({
       "paging": true,
@@ -126,7 +126,7 @@
     //Date and time picker
     $('#reservationdatetime').datetimepicker({ 
       icons: { time: 'far fa-clock' },
-      format: 'DD-MM-YYYY HH:mm:ss', 
+      format: 'DD-MM-YYYY HH:mm', 
     });
     
   });
