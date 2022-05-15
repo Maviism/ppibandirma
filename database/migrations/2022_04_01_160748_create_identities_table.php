@@ -14,19 +14,19 @@ return new class extends Migration
     public function up()
     {
         Schema::create('identities', function (Blueprint $table) {
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->enum('gender', ['laki', 'perempuan']);
             $table->enum('married', ['sudah', 'belum']);
             $table->string('religion')->nullable();
+            $table->text('date_of_birth');
+            $table->string('blood_type')->nullable();
+            $table->string('phone_number');
+            $table->string('parent_phone_number')->nullable();
             $table->string('arrival_year')->nullable();
             $table->string('student_no')->unique();
             $table->string('university');
             $table->string('faculty')->nullable();
             $table->string('departman')->nullable();
-            $table->string('date_of_birth');
-            $table->string('blood_type')->nullable();
-            $table->string('phone_number');
-            $table->string('parent_phone_number')->nullable();
             $table->string('address_tr')->nullable();
             $table->timestamps();
         });

@@ -44,7 +44,6 @@ Route::get('/finance', function () {
     return view('finance');
 });
 
-Route::get('/kirimemail', [UserController::class, 'activate']);
 
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'
@@ -60,8 +59,8 @@ Route::middleware(['auth', 'role:admin,super-admin', 'verified'])->group(functio
     Route::resource('/admin/event', EventController::class)->except('show');
     Route::resource('/admin/finance', FinanceController::class)->except('show');
     Route::resource('/admin/member', UserController::class)->except('show');
+    Route::post('/activate/{user}', [UserController::class, 'activate'])->name('member.activate');
     Route::post('/admin/member/import-excel', [UserController::class, 'import_excel']);
-    Route::post('/admin/member/activate/{user}', [UserController::class, 'activate'])->name('member.activate');
 
 });
 

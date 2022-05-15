@@ -82,18 +82,66 @@ class UserController extends Controller
     }
 
     public function edit($id)
-    {
-        //
+    {   
+        
+        return view('/admin/member/edit', 
+        ['user'=> User::find($id)]);
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required',
+            'phoneNumber' => 'nullable',
+            'birthDay' => 'required',
+            'married' => 'nullable',
+            'gender' => 'nullable',
+            'religion' => 'nullable',
+            'address' => 'nullable',
+            'bloodType' => 'nullable',
+            'student_no' => 'required',
+            'arrivalYear' => 'nullable',
+            'university' => 'nullable',
+            'faculty' => 'nullable',
+            'departman' => 'nullable',
+        ]);
+
+        $user = User::find($id);
+
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'role' => 'user'
+        ]);
+
+        $user->identity()->update([
+            'phone_number' => $request->phoneNumber,
+            'date_of_birth' => $request->birthDay,
+            'married' => $request->married,
+            'gender' => $request->gender,
+            'religion' => $request->religion,
+            'address_tr' => $request->address,
+            'blood_type' => $request->bloodType,
+            'student_no' => $request->student_no,
+            'arrival_year' => $request->arrivalYear,
+            'university' => $request->university,
+            'faculty' => $request->faculty,
+            'departman' => $request->departman,
+        ]);
+
+        session()->flash('success', 'Berhasil mengubah data!');
+        return redirect()->route('member.index');
     }
 
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+
+        $user->delete();
+
+        session()->flash('success', 'user telah dihapus!');
+        return redirect()->route('member.index');
     }
 
     public function changeRole(Request $request, User $user)
@@ -109,13 +157,7 @@ class UserController extends Controller
             'file' => 'required|mimes:csv,xls,xlsx'
         ]);
 
-        $file = $request->file('file');
-
-        $name_file = rand().$file->getClientOriginalName();
-
-        $file->move('file_siswa', $name_file);
-
-        Excel::import(new UserImport, public_path('/file_siswa/'.$name_file));
+        Excel::import(new UserImport, request()->file('file'));
 
         Session::flash('sukses', 'Data berhasil diimport');
 
@@ -127,6 +169,8 @@ class UserController extends Controller
             'name' => $user->name
         ];
         Mail::to($user->email)->send(new UserActivate($userInformation));
-        return "email terkirim";
+
+        Session::flash('sukses', 'Email terkirim');
+        return redirect()->back();
     }
 }

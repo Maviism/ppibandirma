@@ -213,7 +213,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
         
   <div class="v-text-align" style="color: #333333; line-height: 190%; text-align: left; word-wrap: break-word;">
     <ol>
-<li style="font-size: 14px; line-height: 26.6px;"><strong><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 26.6px;">Kunjungi halaman lupa password untuk setting password anda pertama kali </span></strong></li>
+<li style="font-size: 14px; line-height: 26.6px;"><strong><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 26.6px;">Kunjungi halaman <a href="{{ config('app.url') }}/forgot-password">lupa password</a> untuk setting password anda pertama kali </span></strong></li>
 <li style="font-size: 14px; line-height: 26.6px;"><strong><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 26.6px;">Masukan email yang terdaftar ini di halaman lupa password</span></strong></li>
 <li style="font-size: 14px; line-height: 26.6px;"><strong><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 26.6px;">Email reset password akan tiba</span></strong></li>
 <li style="font-size: 14px; line-height: 26.6px;"><strong><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 26.6px;">Atur email baru anda.</span></strong></li>
@@ -233,8 +233,8 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
         
 <div class="v-text-align" align="center">
   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;font-family:arial,helvetica,sans-serif;"><tr><td class="v-text-align" style="font-family:arial,helvetica,sans-serif;" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:36px; v-text-anchor:middle; width:142px;" arcsize="11%" stroke="f" fillcolor="#7dc637"><w:anchorlock/><center style="color:#ffffff;font-family:arial,helvetica,sans-serif;"><![endif]-->
-    <a href="" target="_blank" style="box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #ffffff; background-color: #7dc637; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
-      <span style="display:block;padding:10px 20px;line-height:120%;"><strong><span style="font-size: 14px; line-height: 16.8px; font-family: Cabin, sans-serif;">R E A D&nbsp; &nbsp;M O R E</span></strong></span>
+    <a href="{{ config('app.url')}} " target="_blank" style="box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #ffffff; background-color: #7dc637; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
+      <span style="display:block;padding:10px 20px;line-height:120%;"><strong><span style="font-size: 14px; line-height: 16.8px; font-family: Cabin, sans-serif;">G O&nbsp; &nbsp;T O&nbsp; &nbsp;W E B S I T E</span></strong></span>
     </a>
   <!--[if mso]></center></v:roundrect></td></tr></table><![endif]-->
 </div>
@@ -292,7 +292,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
         
   <div class="v-text-align" style="color: #9c9c9c; line-height: 190%; text-align: center; word-wrap: break-word;">
     <p style="font-size: 14px; line-height: 190%;"><span style="font-size: 18px; line-height: 34.2px;">w w w . p p i b a n d i r m a . c o m</span></p>
-<p style="font-size: 14px; line-height: 190%;">If you have questions regarding your Data, please visit our <a href="">Privacy Policy</a></p>
+<p style="font-size: 14px; line-height: 190%;">If you have questions regarding your Data, please visit our <a href="#">Privacy Policy</a></p>
   </div>
 
       </td>
@@ -313,37 +313,18 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
     <!--[if (mso)|(IE)]><td width="32" style="width:32px; padding-right: 10px;" valign="top"><![endif]-->
     <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 10px">
       <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-        <a href="https://facebook.com/" title="Facebook" target="_blank">
-          <img src="{{ config('app.url') }}/images/image-1.png" alt="Facebook" title="Facebook" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
+        <a href="https://youtube.com/channel/UCYLkCwuf3NBTdP0YhYpDffA" title="Youtube" target="_blank">
+          <img src="{{ config('app.url') }}/images/image-1.png" alt="Youtube" title="Youtube" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
         </a>
       </td></tr>
     </tbody></table>
     <!--[if (mso)|(IE)]></td><![endif]-->
     
-    <!--[if (mso)|(IE)]><td width="32" style="width:32px; padding-right: 10px;" valign="top"><![endif]-->
-    <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 10px">
-      <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-        <a href="https://twitter.com/" title="Twitter" target="_blank">
-          <img src="{{ config('app.url') }}/images/image-3.png" alt="Twitter" title="Twitter" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
-        </a>
-      </td></tr>
-    </tbody></table>
-    <!--[if (mso)|(IE)]></td><![endif]-->
-    
-    <!--[if (mso)|(IE)]><td width="32" style="width:32px; padding-right: 10px;" valign="top"><![endif]-->
-    <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 10px">
-      <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-        <a href="https://linkedin.com/" title="LinkedIn" target="_blank">
-          <img src="{{ config('app.url') }}/images/image-2.png" alt="LinkedIn" title="LinkedIn" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
-        </a>
-      </td></tr>
-    </tbody></table>
-    <!--[if (mso)|(IE)]></td><![endif]-->
     
     <!--[if (mso)|(IE)]><td width="32" style="width:32px; padding-right: 0px;" valign="top"><![endif]-->
     <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 0px">
       <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-        <a href="https://instagram.com/" title="Instagram" target="_blank">
+        <a href="https://instagram.com/ppibandirma" title="Instagram" target="_blank">
           <img src="{{ config('app.url') }}/images/image-4.png" alt="Instagram" title="Instagram" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
         </a>
       </td></tr>
