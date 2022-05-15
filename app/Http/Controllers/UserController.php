@@ -6,6 +6,7 @@ use App\Imports\UserImport;
 use App\Mail\UserActivate;
 use App\Models\Identity;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
@@ -28,6 +29,8 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+        $date = date("Y-m-d H:i:s");
+        
         $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|email:rfc,dns|unique:users',
@@ -44,12 +47,11 @@ class UserController extends Controller
             'faculty' => 'nullable',
             'departman' => 'nullable',
         ]);
-
-    // dd('hello');     
+        
+        
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'email_verified_at' => now(),
             'role' => 'user'
         ]);
 
@@ -70,6 +72,7 @@ class UserController extends Controller
         ]);
         
         session()->flash('success', 'Berhasil menambah member {$user->name}!');
+        $this->activate($user);
         return redirect()->route('member.index');
     }
 
@@ -120,7 +123,10 @@ class UserController extends Controller
     }
 
     public function activate(User $user){
-
+        $userInformation = [
+            'name' => $user->name
+        ];
+        Mail::to($user->email)->send(new UserActivate($userInformation));
         return "email terkirim";
     }
 }

@@ -5,6 +5,7 @@
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
+  {{ config('app.url') }}
       <div class="container-fluid">
         @if (session('status'))
             <div class="alert alert-success alert-dismissible">

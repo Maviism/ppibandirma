@@ -11,14 +11,15 @@ class UserActivate extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $userInformation;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($details)
+    public function __construct($userInformation)
     {
-        $this->details = $details;
+        $this->userInformation = $userInformation;    
     }
 
     /**
@@ -28,7 +29,7 @@ class UserActivate extends Mailable
      */
     public function build()
     {
-        return $this->subject('Mail from')
-        ->view('view.name');
+        return $this->subject('Web Account')
+                    ->view('email');
     }
 }

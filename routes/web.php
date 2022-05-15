@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Livewire\Event\Detail as EventDetail;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\Status\Status;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -43,9 +44,7 @@ Route::get('/finance', function () {
     return view('finance');
 });
 
-Route::get('/kirimemail', function(){
-    return view('user-email');
-});
+Route::get('/kirimemail', [UserController::class, 'activate']);
 
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'
