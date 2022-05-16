@@ -46,7 +46,7 @@
                     </div>
                     <div class="form-group">
                       <label for="eventPlace">Tempat acara</label>
-                      <input type="text" class="form-control" id="eventPlace" name="eventPlace" placeholder="Masukan tempat acara" value="{{$event->event_place}}">
+                      <input type="text" class="form-control" id="eventPlace" name="eventPlace" placeholder="Masukan tempat acara" value="{{$event->place}}">
                     </div>
                     <div class="form-group">
                       <label>Date and time:</label>

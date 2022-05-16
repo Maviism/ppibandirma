@@ -135,7 +135,7 @@
                       </td>
                       <td>
                           @if(Auth::user()->role == "super-admin")
-                          <a href="" class="btn btn-warning">
+                          <a href="/admin/member/{{$user->id}}/edit" class="btn btn-warning">
                             <i class="fas fa-pencil-alt"></i>
                           </a>
                           @endif
