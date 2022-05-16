@@ -63,7 +63,7 @@
                     @foreach( $events as $event)
                   <tr>
                     <td>{{$event->event_name}}</td>
-                    <td>{{$event->event_place}}</td>
+                    <td>{{$event->place}}</td>
                     <td>{{$event->dateFormat()}}</td>
                     <td>
                       <form action="{{route('event.destroy', $event)}}" method="POST">

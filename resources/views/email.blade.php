@@ -119,7 +119,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
   <tr>
     <td class="v-text-align" style="padding-right: 0px;padding-left: 0px;" align="center">
       
-      <img align="center" border="0" src="images/image-5.png" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 208px;" width="208"/>
+      <img align="center" border="0" src="https://ppibandirma.tech/images/image-5.png" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 208px;" width="208"/>
       
     </td>
   </tr>
@@ -160,7 +160,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
   <tr>
     <td class="v-text-align" style="padding-right: 0px;padding-left: 0px;" align="center">
       
-      <img align="center" border="0" src="images/image-6.png" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 577px;" width="577"/>
+      <img align="center" border="0" src="https://ppibandirma.tech/images/image-6.png" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 577px;" width="577"/>
       
     </td>
   </tr>
@@ -325,7 +325,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
     <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 0px">
       <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
         <a href="https://instagram.com/ppibandirma" title="Instagram" target="_blank">
-          <img src="{{ config('app.url') }}/images/image-4.png" alt="Instagram" title="Instagram" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
+          <img src="https://ppibandirma.tech/images/image-4.png" alt="Instagram" title="Instagram" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
         </a>
       </td></tr>
     </tbody></table>

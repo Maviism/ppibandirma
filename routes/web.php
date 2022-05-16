@@ -58,13 +58,15 @@ Route::middleware(['auth', 'role:admin,super-admin', 'verified'])->group(functio
     
     Route::resource('/admin/event', EventController::class)->except('show');
     Route::resource('/admin/finance', FinanceController::class)->except('show');
-    Route::resource('/admin/member', UserController::class)->except('show');
-    Route::post('/activate/{user}', [UserController::class, 'activate'])->name('member.activate');
-    Route::post('/admin/member/import-excel', [UserController::class, 'import_excel']);
-
+    Route::resource('/admin/member', UserController::class)->except(['show', 'edit', 'update']);
+    
 });
 
-Route::middleware(['auth', 'role:super-admin'])->group(function(){
+Route::middleware(['auth', 'role:super-admin', 'verified'])->group(function(){
+    Route::post('/admin/member/import-excel', [UserController::class, 'import_excel']);
+    Route::get('/admin/member/{id}/edit', [UserController::class, 'edit'])->name('member.edit');
+    Route::post('/admin/member/{id}', [UserController::class, 'update'])->name('member.update');
+    Route::post('/activate/{user}', [UserController::class, 'activate'])->name('member.activate');
     Route::put('/admin/role-update/{user}', [UserController::class, 'changeRole'])->name('role.update');
 });
 
