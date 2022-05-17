@@ -1,10 +1,15 @@
-## Required
-
-- PHP 8.^
-- Composer
-- Mysql
-- Web server(Apache, Nginx)
-
+## About 
+    System information web app for  organization
+    [features]
+    - Multi role 
+    - Manage user
+    - Manage event
+    - Make status
+    
+    [demo](https://ppibandirma.tech)
+    email : admin@gmail.com
+    password : password
+    
 ## Stack
 
 - [Laravel9-Jetstream](https://laravel.com/docs/routing).
@@ -13,20 +18,27 @@
 - [TailwindCss](https://tailwindcss.com).
 
 
-## How to install
+## Required
 
-- Git clone 
-- Composer install
+- PHP 8.^
+- Composer
+- Mysql
+- Web server(Apache, Nginx)
+
+
+## How to install local
+
+- git clone 
+- composer install
 - copy .env.example .env
 - php artisan key:generate
-- set .env (
-    - db name and pass
+- set .env 
+    - db name, username and pass
     - smtp server
 - Migration
 
-## make a pull request
 
-- create a new branch
-- fetch master branch
-- merge
-- send pull request
+## Author
+
+ - Muadz Izhharul Haq
+ - 201502208 - Bilgisayar Mühendisliği
