@@ -85,8 +85,7 @@ class DatabaseSeeder extends Seeder
             'event_name' => "Jumat berkah",
             'slug' => "jumat-berkah",
             'place' => "Rumah fulan",
-            'date' => '08-01-2023',
-            'time' => '11:00',
+            'date' => '08-01-2023 11:00',
             'thumbnail' => "jumber.jpeg",
             'description' => "Masukan <em>deskripsi</em> <u>acara</u> <strong>disini</strong>"
         ]);
@@ -95,8 +94,7 @@ class DatabaseSeeder extends Seeder
             'event_name' => "Podcast PPI BANDIRMA",
             'slug' => 'podcast-ppi-bandirma',
             'place' => "Spotify",
-            'date' => '04-08-2022',
-            'time' => '15:00',
+            'date' => '04-08-2022 15:00',
             'thumbnail' => "podcast.jpeg",
             'description' => "Masukan <em>deskripsi</em> <u>acara</u> <strong>disini</strong>"
         ]);
@@ -106,7 +104,6 @@ class DatabaseSeeder extends Seeder
             'slug' => "malam-takbiran-bersama-ppi-turki",
             'place' => "Zoom meeting",
             'date' => '26-01-2022 12:00',
-            'time' => '08:00',
             'thumbnail' => "takbiran.jpeg",
             'description' => "Masukan <em>deskripsi</em> <u>acara</u> <strong>disini</strong>"
         ]);
@@ -115,8 +112,7 @@ class DatabaseSeeder extends Seeder
             'event_name' => "Yuk kita sahurrr",
             'slug' => "yuk-kita-sahurrr",
             'place' => "Zoom meeting",
-            'date' => '16-03-2022',
-            'time' => '12:00',
+            'date' => '16-03-2022 12:00',
             'thumbnail' => "yks.jpeg",
             'description' => "Masukan <em>deskripsi</em> <u>acara</u> <strong>disini</strong>"
         ]);
