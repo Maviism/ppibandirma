@@ -13,15 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('ratings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable();
-            $table->string('event_name');
-            $table->string('slug');
-            $table->string('place')->nullable();
-            $table->timestamp('date')->nullable();
-            $table->string('thumbnail')->nullable();
-            $table->text('description');
+            $table->foreignId('event_id');
+            $table->foreignId('user_id');
+            $table->integer('rate');
+            $table->text('review');
+            $table->boolean('show_name')->default('0');
             $table->timestamps();
         });
     }
@@ -33,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('ratings');
     }
 };

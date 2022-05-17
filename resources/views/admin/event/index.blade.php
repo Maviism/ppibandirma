@@ -71,12 +71,64 @@
                         @method('DELETE')
                         <a href="/admin/event/{{$event->id}}/edit" class="btn btn-warning">
                           <i class="fas fa-pencil-alt"></i>
-                          Edit
                         </a>
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-info-{{$event->id}}">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <div class="modal fade" id="modal-info-{{$event->id}}">
+                          <div class="modal-dialog">
+                            <div class="modal-content bg-info">
+                              <div class="modal-header">
+                                <h4 class="modal-title">{{ $event->event_name}}</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                              <div class="card-body">
+                                <div class="form-group">
+                                    <label for="eventName">Nama acara</label>
+                                    <input disabled type="text" class="form-control" value="{{$event->event_name}}" id="eventName" name="eventName" placeholder="Masukan nama acara">
+                                </div>
+                                <div class="form-group">
+                                  <label for="eventPlace">Tempat acara</label>
+                                  <input disabled type="text" class="form-control" id="eventPlace" name="eventPlace" placeholder="Masukan tempat acara" value="{{$event->place}}">
+                                </div>
+                                <div class="form-group">
+                                  <label>Date and time:</label>
+                                    <div class="input-group date" id="reservationdatetime" data-target-input="nearest">
+                                        <input disabled type="text" name="eventDate" value="{{$event->date}}" placeholder="dd-mm-yyyy 00:00" class="form-control datetimepicker-input" data-target="#reservationdatetime"/>
+                                        <div class="input-group-append" data-target="#reservationdatetime" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                  <img src="/storage/event/{{$event->thumbnail}}" id="preview" width="200">
+                                </div>
+                                <div class="form-group">
+                                    <label for="eventDescription">Deskripsi acara</label>
+                                    <div class="card-body">
+                                      <p>{!! $event->description !!}</p>
+                                    </div>
+                                  </div>
+                              </div>
+                              <!-- /.card-body -->
+                              </div>
+                              <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                            <!-- /.modal-content -->
+                          </div>
+                          <!-- /.modal-dialog -->
+                        </div>
+                        @if(Auth::user()->role == "super-admin")
                         <button type="submit" class="btn btn-danger">
                           <i class="fas fa-trash"></i>
                           Delete
                         </button>
+                        @endif
                       </form>
                     </td>
                     
