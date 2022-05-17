@@ -53,7 +53,7 @@
         @stack('modals')
 
         <footer>
-                <div class="pt-2 text-center text-gray-500">© 2020 PPI Bandirma. All rights
+                <div class="pt-2 mb-16 md:mb-4 text-center text-gray-500">© 2020 PPI Bandirma. All rights
                     reserved.</div>
         </footer>
 

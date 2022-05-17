@@ -6,10 +6,14 @@
             </a>
 
             <nav id="nav" class="fixed bottom-0 left-0 z-50 flex flex-row items-center justify-around w-full h-16 p-2 mt-24 text-sm text-gray-800 bg-white border-t border-gray-200 md:w-auto md:flex-row md:h-24 lg:text-base md:bg-transparent md:mt-0 md:border-none md:py-0 md:flex md:relative">
-                <a href="/home" class="ml-0 mr-0 font-bold duration-100 md:ml-12 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Home</a>
-                <a href="/search" class="ml-0 mr-0 font-bold duration-100 md:hidden transition-color hover:text-indigo-600">Search</a>
-                <a href="/event" class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Event</a>
-                <a href="/finance" class="mr-0 font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Society</a>
+                <a href="/home" class="ml-0 mr-0 hidden md:block font-bold duration-100 md:ml-12 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Home</a>
+                
+                <a href="/event" class="mr-0 hidden md:block font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Event</a>
+                <a href="/finance" class="mr-0 hidden md:block font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Society</a>
+
+                <a href="/home" class="ml-0 mr-0 font-bold duration-100 md:hidden transition-color hover:text-indigo-600"><i class="nav-icon fa fa-home text-2xl text-blue-800"></i></a>
+                <a href="/event" class="ml-0 mr-0 font-bold duration-100 md:hidden transition-color hover:text-indigo-600"><i class="nav-icon far fa-calendar-alt text-2xl text-blue-800"></i></a>
+                <a href="/society" class="ml-0 mr-0 font-bold duration-100 md:hidden transition-color hover:text-indigo-600"><i class="nav-icon fas fa-user text-2xl text-blue-800"></i></a>
                 
                 <!-- Mobile -->
                 @if (Route::has('login'))

@@ -16,12 +16,16 @@ class Event extends Model
     protected $fillable = [
         'event_name',
         'slug',
-        'event_place',
+        'place',
         'date',
         'time',
         'thumbnail',
         'description',
     ];
+
+    public function rating(){
+        return $this->hasMany(Rating::class);
+    }
 
     public function dateFormat(){
         $dt = Carbon::parse($this->attributes['date']);
