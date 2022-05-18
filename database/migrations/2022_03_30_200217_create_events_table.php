@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('event_name');
             $table->string('slug');
             $table->string('place')->nullable();
-            $table->timestamp('date')->nullable();
+            $table->string('date')->nullable();
             $table->string('thumbnail')->nullable();
             $table->text('description');
             $table->timestamps();

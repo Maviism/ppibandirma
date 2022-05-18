@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Finance;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class FinanceController extends Controller
 {
@@ -18,7 +22,7 @@ class FinanceController extends Controller
 
     public function create()
     {
-        return view('admin/finance/createTransaction');
+        return view('admin/finance/createTransaction', ['users' => User::orderBy('name')->get()]);
     }
 
     /**
@@ -31,14 +35,26 @@ class FinanceController extends Controller
     {   
 
         Finance::create([
+            'type' => $request->type,
+            'added_by' => Auth::user()->id,
+            'user_id' => $request->user,
             'amount' => $request->amount,
             'description' => $request->description,
-            'transaction_date' => $request->date1,
-            'status' => $request->status1,
+            'transaction_date' => strtotime($request->date),
         ]);
-        
-        session()->flash('success', 'Berhasil membuat acara!');
-        return redirect()->route('finance');
+
+        if($request->type == 'debit' && $request->user != 0){
+            $newBalance = User::find($request->user)->balance + $request->amount;
+            User::where('id', $request->user)
+            ->update(['balance' => $newBalance]); 
+        }
+        else if($request->type == 'kredit' && $request->user == 0){
+            DB::table('users')->decrement('balance', $request->amount);
+        }
+
+       
+        session()->flash('success', 'Transaksi berhasil!');
+        return redirect()->route('finance.index');
     }
 
     /**
@@ -83,6 +99,8 @@ class FinanceController extends Controller
      */
     public function destroy(Finance $finance)
     {
-        //
+        Finance::destroy($finance->id);
+        session()->flash('success', 'Event telah dihapus!');
+        return back();
     }
 }

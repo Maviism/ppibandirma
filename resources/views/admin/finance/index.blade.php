@@ -54,33 +54,35 @@
                   <thead>
                   <tr>
                     <th>Date</th>
-                    <th>Status</th>
-                    <th>Description</th>
+                    <th>Nasabah</th>
+                    <th>type</th>
                     <th>Amount</th>
+                    <th>Description</th>
+                    @if(Auth::user()->role == "super-admin")
                     <th>Action</th>
+                    @endif
                   </tr>
                   </thead>
                   <tbody>
                   @foreach( $transactions as $transaction)
                   <tr>
-                    <td>{{$transaction->date}}</td>
-                    <td>{{$transaction->status}}</td>
-                    <td>{{$transaction->description}}</td>
+                    <td>{{gmdate("Y/m/d", $transaction->transaction_date) }}</td>
+                    <td>{{$transaction->user->name ?? '-'}}</td>
+                    <td>{{$transaction->type}}</td>
                     <td>{{$transaction->amount}}</td>
+                    <td>{{$transaction->description}}</td>
+                    @if(Auth::user()->role == "super-admin")
                     <td>
                       <form action="{{route('finance.destroy', $transaction)}}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <a href="/admin/transaction/{{$transaction->id}}/edit" class="btn btn-warning">
-                          <i class="fas fa-pencil-alt"></i>
-                          Edit
-                        </a>
                         <button type="submit" class="btn btn-danger">
                           <i class="fas fa-trash"></i>
                           Delete
                         </button>
                       </form>
                     </td>
+                    @endif
                     
                   </tr>
                     @endforeach

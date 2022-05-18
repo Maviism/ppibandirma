@@ -61,10 +61,10 @@
         if (document.getElementById('nav-mobile-btn')) {
             document.getElementById('nav-mobile-btn').addEventListener('click', function () {
                 if (this.classList.contains('close')) {
-                    document.getElementById('nav').classList.add('hidden');
+                    document.getElementById('nav1').classList.add('hidden');
                     this.classList.remove('close');
                 } else {
-                    document.getElementById('nav').classList.remove('hidden');
+                    document.getElementById('nav1').classList.remove('hidden');
                     this.classList.add('close');
                 }
             });

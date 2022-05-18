@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Livewire\Event\Detail as EventDetail;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\Status\Status;
+use App\Http\Livewire\Society\Index as Society;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +34,7 @@ Route::get('/home', function () {
 
 Route::get('/status/{id}', Status::class)->middleware('auth');
 
+Route::get('/users', Society::class)->middleware('auth');
 
 Route::get('/event', function () {
     return view('event');

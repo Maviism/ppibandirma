@@ -87,8 +87,8 @@
                     <th>Nama</th>
                     <th>Email</th>
                     <th>No Hp</th>
-                    <th>Gender</th>
-                    <th>Fakultas-Prodi</th>
+                    <th>Balance</th>
+                    <th>Prodi</th>
                     <th>Jabatan</th>
                     <th>Status</th>
                     <th>Action</th>
@@ -100,7 +100,7 @@
                       <td>{{$user->name}}</td>
                       <td>{{$user->email}}</td>
                       <td>{{$user->identity->phone_number ?? '-'}}</td>
-                      <td>{{$user->identity->gender ?? '-'}}</td>
+                      <td>{{$user->balance}} tl</td>
                       <td>{{$user->identity->departman ?? '-'}}</td>
                       <td>
                         @if(Auth::user()->role == "super-admin")

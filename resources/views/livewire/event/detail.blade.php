@@ -37,6 +37,9 @@
         </div>
 
         <!-- Rating -->
+        @guest
+        <div> <a href="/login" class="text-blue-500">Login</a> for giving review </div>
+        @endguest
         @auth
         <div class="container mt-2 flex justify-center">
             <div class="p-3 ">

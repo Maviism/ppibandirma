@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('finances', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable();
-            $table->string('amount');
-            $table->string('transaction_date')->default('');
-            $table->string('status')->default('debit');
+            $table->foreignId('user_id');
+            $table->integer('added_by');
+            $table->float('amount');
+            $table->string('transaction_date');
+            $table->enum('type', ['debit', 'kredit']);
             $table->text('description');
             $table->timestamps();
         });

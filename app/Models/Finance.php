@@ -10,7 +10,18 @@ class Finance extends Model
     use HasFactory;
 
     protected $fillable = [
-        'amount', 'description', 'transaction_date'. 'status'
+        'user_id',
+        'added_by',
+        'amount', 
+        'transaction_date', 
+        'description', 
+        'type',
     ];
     
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
 }
+
+
