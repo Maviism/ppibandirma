@@ -22,6 +22,10 @@ class Finance extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function addedBy(){
+        return User::find($this->attributes['added_by'])->name;
+    }
+
 }
 
 

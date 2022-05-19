@@ -12,6 +12,7 @@ class Textcard extends Component
 {
     public $statuses = [];
     public $status;
+    public $show_name = 0;
 
     
 
@@ -52,7 +53,8 @@ class Textcard extends Component
     public function store(){
         $status = Status::create([
             'status' => $this->status,
-            'user_id' => Auth::user()->id
+            'user_id' => Auth::user()->id,
+            'hide_name' => $this->show_name,
         ]);
 
         $this->status = '';

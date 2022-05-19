@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
+        <meta name="description" content="PPI Bandirma is organization of indonesian student who study in Bandirma, Türkiye">
+
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
@@ -38,7 +40,7 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased ">
-        <!-- <x-jet-banner /> -->
+        
 
         <div class="min-h-screen relative">
             @livewire('components.navbar')
@@ -52,9 +54,9 @@
 
         @stack('modals')
 
+        
         <footer>
-                <div class="pt-2 mb-16 md:mb-4 text-center text-gray-500">© 2020 PPI Bandirma. All rights
-                    reserved.</div>
+                <div class="pt-2 pb-16 md:pb-4 text-center text-gray-100 bg-slate-900">© 2022 Copyright: PPI Bandirma. </div>
         </footer>
 
         <script>

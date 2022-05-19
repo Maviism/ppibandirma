@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->text('status', 256);
+            $table->boolean('hide_name')->default(0);
             $table->timestamps();
         });
     }

@@ -55,6 +55,7 @@
                   <tr>
                     <th>Date</th>
                     <th>Nasabah</th>
+                    <th>Teller</th>
                     <th>type</th>
                     <th>Amount</th>
                     <th>Description</th>
@@ -67,10 +68,11 @@
                   @foreach( $transactions as $transaction)
                   <tr>
                     <td>{{gmdate("Y/m/d", $transaction->transaction_date) }}</td>
-                    <td>{{$transaction->user->name ?? '-'}}</td>
-                    <td>{{$transaction->type}}</td>
-                    <td>{{$transaction->amount}}</td>
-                    <td>{{$transaction->description}}</td>
+                    <td>{{ $transaction->user->name ?? '-'}}</td>
+                    <td>{{ $transaction->addedBy() ?? '-'}}</td>
+                    <td>{{ $transaction->type}}</td>
+                    <td>{{ $transaction->amount}}</td>
+                    <td>{{ $transaction->description}}</td>
                     @if(Auth::user()->role == "super-admin")
                     <td>
                       <form action="{{route('finance.destroy', $transaction)}}" method="POST">

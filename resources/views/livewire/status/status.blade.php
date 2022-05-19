@@ -7,11 +7,11 @@
                 <a href="#" class="flex-shrink-0 group block">
                     <div class="flex items-center">
                     <div>
-                        <img class="inline-block h-10 w-10 rounded-full" src="{{$status->user->profile_photo_url}}" alt="" />
+                        <img class="inline-block h-10 w-10 rounded-full" src="{{$status->hide_name == 0 ? $status->user->profile_photo_url : '/logo.png'}}" alt="" />
                     </div>
                     <div class="ml-3">
                         <p class="text-base leading-6 font-medium text-gray-700">
-                        {{ $status->user->name}} 
+                        {{ $status->hide_name == 0 ? $status->user->name : 'Anonim'}} 
                         <span class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
                         • {{$status->created_at}}
                             </span>

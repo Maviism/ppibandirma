@@ -22,7 +22,7 @@ class Status extends Model
         return $this->hasMany(Like::class);
     }
 
-    protected $fillable = ['status', 'user_id'];
+    protected $fillable = ['status', 'user_id', 'hide_name'];
 
     public function getCreatedAtAttribute(){
         return Carbon::parse($this->attributes['created_at'])

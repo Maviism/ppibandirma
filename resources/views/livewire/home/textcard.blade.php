@@ -14,13 +14,19 @@
             </div>                    
         </div>
         <!--Text box-->
-        <div class="flex">
-            <div class="flex-1">
+        
+            <div class="flex {{Auth::user()->balance >= 0 ? 'justify-between' : 'justify-end'}} pl-8">
+                @if( Auth::user()->balance >= 0 )
+                <div class="form-group p-3  ml-6">
+                    <input type="checkbox" wire:model="show_name" value="1" id="show_name" name="show_name">
+                    <label for="commentCheck">hide my name</label>
+                </div>
+                @endif
                 <button type="submit" class="bg-blue-400 mt-2 mb-2 hover:bg-blue-600 text-white font-bold py-2 px-8 rounded-full mr-8 float-right">
                     Share
                 </button>
             </div>
-        </div>
+    
     </div> <!-- End post -->
     <hr class="border-gray-500 border">
     </form>
@@ -32,11 +38,11 @@
             <a href="#" class="flex-shrink-0 group block">
                 <div class="flex items-center">
                 <div>
-                    <img class="inline-block h-10 w-10 rounded-full" src="{{$status->user->profile_photo_url}}" alt="" />
+                    <img class="inline-block h-10 w-10 rounded-full" src="{{$status->hide_name == 0 ? $status->user->profile_photo_url : '/logo.png'}}" alt="" />
                 </div>
                 <div class="ml-3">
                     <p class="text-base leading-6 font-medium text-gray-700">
-                    {{ $status->user->name}} 
+                    {{ $status->hide_name == 0 ? $status->user->name : 'Anonim'}} 
                     <span class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
                     • {{$status->created_at}}
                         </span>

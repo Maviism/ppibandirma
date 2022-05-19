@@ -126,7 +126,6 @@
                         @if(Auth::user()->role == "super-admin")
                         <button type="submit" class="btn btn-danger">
                           <i class="fas fa-trash"></i>
-                          Delete
                         </button>
                         @endif
                       </form>
