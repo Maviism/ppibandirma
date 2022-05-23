@@ -11,8 +11,9 @@
             </div>
             <div class="flex-1 px-2 pt-2 mt-2">
                 <textarea wire:model="status" class=" bg-transparent text-gray-400 font-medium text-lg w-full" rows="2" cols="50" placeholder="What's happening?"></textarea>
-            </div>                    
+            </div>
         </div>
+        @error('status') <span class="error text-red-400 ml-4">{{ $message }}</span> @enderror                    
         <!--Text box-->
         
             <div class="flex {{Auth::user()->balance >= 0 ? 'justify-between' : 'justify-end'}} pl-8">

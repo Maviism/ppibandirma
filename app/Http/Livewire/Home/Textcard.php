@@ -14,7 +14,14 @@ class Textcard extends Component
     public $status;
     public $show_name = 0;
 
-    
+    protected $rules = [
+        'status' => 'required|min:3',
+    ];    
+
+    protected $messages = [
+        'status.required' => 'Kamu belum menulis status.',
+        'status.min' => 'Status minimal mengandung 3 kata.',
+    ];
 
     protected $listeners = [
         'statusCreated'
@@ -51,6 +58,8 @@ class Textcard extends Component
     }
 
     public function store(){
+        $this->validate();
+
         $status = Status::create([
             'status' => $this->status,
             'user_id' => Auth::user()->id,

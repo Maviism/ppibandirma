@@ -216,7 +216,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
 <li style="font-size: 14px; line-height: 26.6px;"><strong><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 26.6px;">Kunjungi halaman <a href="{{ config('app.url') }}/forgot-password">lupa password</a> untuk setting password anda pertama kali </span></strong></li>
 <li style="font-size: 14px; line-height: 26.6px;"><strong><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 26.6px;">Masukan email yang terdaftar ini di halaman lupa password</span></strong></li>
 <li style="font-size: 14px; line-height: 26.6px;"><strong><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 26.6px;">Email reset password akan tiba</span></strong></li>
-<li style="font-size: 14px; line-height: 26.6px;"><strong><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 26.6px;">Atur email baru anda.</span></strong></li>
+<li style="font-size: 14px; line-height: 26.6px;"><strong><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 26.6px;">Atur password baru anda.</span></strong></li>
 <li style="font-size: 14px; line-height: 26.6px;"><strong><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 26.6px;">Enjoying our website :).</span></strong></li>
 </ol>
   </div>
@@ -233,8 +233,8 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
         
 <div class="v-text-align" align="center">
   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;font-family:arial,helvetica,sans-serif;"><tr><td class="v-text-align" style="font-family:arial,helvetica,sans-serif;" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:36px; v-text-anchor:middle; width:142px;" arcsize="11%" stroke="f" fillcolor="#7dc637"><w:anchorlock/><center style="color:#ffffff;font-family:arial,helvetica,sans-serif;"><![endif]-->
-    <a href="{{ config('app.url')}} " target="_blank" style="box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #ffffff; background-color: #7dc637; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
-      <span style="display:block;padding:10px 20px;line-height:120%;"><strong><span style="font-size: 14px; line-height: 16.8px; font-family: Cabin, sans-serif;">G O&nbsp; &nbsp;T O&nbsp; &nbsp;W E B S I T E</span></strong></span>
+    <a href="{{ config('app.url')}}/forgot-password " target="_blank" style="box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #ffffff; background-color: #7dc637; border-radius: 4px;-webkit-border-radius: 4px; -moz-border-radius: 4px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
+      <span style="display:block;padding:10px 20px;line-height:120%;"><strong><span style="font-size: 14px; line-height: 16.8px; font-family: Cabin, sans-serif;">F O R G O T&nbsp; &nbsp;P A S S W O R D</span></strong></span>
     </a>
   <!--[if mso]></center></v:roundrect></td></tr></table><![endif]-->
 </div>

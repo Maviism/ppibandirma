@@ -9,8 +9,12 @@
         </div>
         <p>{{$search}}</p>
         @foreach($users as $user)
-        <div>
-            <p>{{$user->name}}</p>
+        <div class="flex items-center space-x-4">
+            <img class="w-10 h-10 rounded-full" src="/logo.png" alt="">
+            <div class="space-y-1 font-medium text-black">
+                <div>{{$user->name}}</div>
+                <div class="text-sm text-gray-500 dark:text-gray-400">{{$user->identity->faculty}}</div>
+            </div>
         </div>
         @endforeach
     </div>
