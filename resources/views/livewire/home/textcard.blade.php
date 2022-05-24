@@ -10,10 +10,10 @@
                 <img class="inline-block h-10 w-10 rounded-full" src="{{Auth::user()->profile_photo_url}}" alt="" />
             </div>
             <div class="flex-1 px-2 pt-2 mt-2">
-                <textarea wire:model="status" class=" bg-transparent text-gray-400 font-medium text-lg w-full" rows="2" cols="50" placeholder="What's happening?"></textarea>
+                <textarea wire:model="status" class="bg-transparent text-gray-400 font-medium text-lg w-full" rows="2" cols="50" placeholder="What's happening?"></textarea>
             </div>
         </div>
-        @error('status') <span class="error text-red-400 ml-4">{{ $message }}</span> @enderror                    
+        @error('status')<span class="error text-red-400 ml-4">{{ $message }}</span> @enderror                    
         <!--Text box-->
         
             <div class="flex {{Auth::user()->balance >= 0 ? 'justify-between' : 'justify-end'}} pl-8">
@@ -38,19 +38,27 @@
         <div class="flex flex-shrink-0 p-4 pb-0">
             <a href="#" class="flex-shrink-0 group block">
                 <div class="flex items-center">
-                <div>
-                    <img class="inline-block h-10 w-10 rounded-full" src="{{$status->hide_name == 0 ? $status->user->profile_photo_url : '/logo.png'}}" alt="" />
-                </div>
-                <div class="ml-3">
-                    <p class="text-base leading-6 font-medium text-gray-700">
-                    {{ $status->hide_name == 0 ? $status->user->name : 'Anonim'}} 
-                    <span class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
-                    • {{$status->created_at}}
-                        </span>
-                        </p>
-                </div>
+                    <div>
+                        <img class="inline-block h-10 w-10 rounded-full" src="{{$status->hide_name == 0 ? $status->user->profile_photo_url : '/logo.png'}}" alt="" />
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-base leading-6 font-medium text-gray-700">
+                        {{ $status->hide_name == 0 ? $status->user->name : 'Anonim'}} 
+                        <span class="text-sm leading-5 font-medium text-gray-400 group-hover:text-gray-300 transition ease-in-out duration-150">
+                        • {{$status->created_at}}
+                            </span>
+                            </p>
+                    </div>
                 </div>
             </a>
+            @if($status->user_id == Auth::user()->id)
+            <div class="flex items-center justify-end w-full">
+                <form action="">
+                    <button class="text-gray-600 font-bold">x</button>
+
+                </form>
+            </div>
+            @endif
         </div>
         <div class="pl-16 pr-2">
             <p class="text-base width-auto font-medium text-black-800 flex-shrink">

@@ -118,16 +118,12 @@
                         <p> {{$user->role}} </p>
                         @endif
                       </td>
-                      
                       <td>
                         @if($user->password)
-                        <form action="" method="POST">
-                          @csrf
-                          <button type="submit" class="btn btn-sm btn-success">Aktif</button>
-                        </form>
+                        <button type="button" class="btn btn-sm btn-success">Aktif</button>
                         @else
                         <form action="{{ route('member.activate', $user) }}" method="POST">
-                          @csrf
+                        @csrf
                           <input type="text" name="email" value="" hidden>
                           <button type="submit" class="btn btn-sm btn-danger">Nonaktif</button>
                         </form>

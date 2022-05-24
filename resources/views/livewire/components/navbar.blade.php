@@ -9,7 +9,7 @@
                 <a href="/home" class="ml-0 mr-0 hidden md:block font-bold duration-100 md:ml-12 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Home</a>
                 
                 <a href="/event" class="mr-0 hidden md:block font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Event</a>
-                <a href="/users" class="mr-0 hidden md:block font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Society</a>
+                <a href="/users" class="mr-0 hidden md:block font-bold duration-100 md:mr-3 lg:mr-8 transition-color hover:text-indigo-600">Member</a>
 
                 <a href="/home" class="ml-0 mr-0 font-bold duration-100 md:hidden transition-color hover:text-indigo-600"><i class="nav-icon fa fa-home text-2xl text-blue-800"></i></a>
                 <a href="/event" class="ml-0 mr-0 font-bold duration-100 md:hidden transition-color hover:text-indigo-600"><i class="nav-icon far fa-calendar-alt text-2xl text-blue-800"></i></a>

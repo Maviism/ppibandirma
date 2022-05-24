@@ -22,6 +22,10 @@ class Detail extends Component
         'ratingCreated'
     ];
 
+    protected $rules = [
+        'comment' => 'nullable|min:3'
+    ];
+
 
     public function setStar($val){
         $this->star = $val;
@@ -41,6 +45,8 @@ class Detail extends Component
     }
 
     public function store(){
+        $this->validate();
+        
         $review = Rating::create([
             'event_id' => $this->event->id,
             'user_id' => Auth::user()->id,

@@ -62,6 +62,7 @@
                             <textarea wire:model="comment" class="bg-white text-gray-600 font-medium text-lg w-full border border-solid border-gray-300 rounded" rows="3" placeholder="write your review about this event"></textarea>
                         </div>
                 </div>
+                @error('comment') <span class="error text-red-400 ml-4">{{ $message }}</span> @enderror
                 <div class="m-2 flex justify-between">
                     <div class="form-group ">
                         <input type="checkbox" value="1" wire:model="show_name" id="commentCheck">
