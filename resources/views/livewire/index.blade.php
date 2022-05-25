@@ -4,13 +4,14 @@
           height: 500px;">
 		<div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed" style="background-color: rgba(0, 0, 0, 0.75);">
 			<div class="flex justify-center items-center h-full">
-			<div class="text-center text-white px-6 md:px-12">
-				<h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12">The best offer on the market <br /><span>for your business</span></h1>
-				<a class="inline-block px-7 py-3 mr-1.5 border-2 border-white text-white font-medium text-sm leading-snug uppercase rounded-full shadow-md hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Login</a>
-				<a class="inline-block px-7 py-3 border-2 border-transparent bg-transparent text-white font-medium text-sm leading-snug uppercase rounded-full focus:outline-none focus:ring-0 transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#event" role="button">Our Event</a>
-			</div>
+				<div class="text-center text-white px-6 md:px-12">
+					<h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12 leading-tight">Welcome, You're visiting <span class="text-sky-600">PPI&nbsp;Bandirma</span> area</h1>
+					<a class="inline-block px-7 py-3 mr-1.5 border-2 border-white text-white font-medium text-sm leading-snug uppercase rounded-full shadow-md hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Login</a>
+					<a class="inline-block px-7 py-3 border-2 border-transparent bg-transparent text-white font-medium text-sm leading-snug uppercase rounded-full focus:outline-none focus:ring-0 transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#event" role="button">Our Event</a>
+				</div>
 			</div>
 		</div>
+		<div class="text-sm p-2 italic absolute text-gray-700 bottom-0 left-0 flex justify-center overflow-hidden bg-fixed items-end h-full">pict by: </div>
 	</div>
 
 	<section class="text-center p-2 bg-slate-50 h-auto">
@@ -29,9 +30,9 @@
 			</audio>
 		</div>
 	</section>
-	<svg class="-mt-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f8fafc" fill-opacity="1" d="M0,96L720,96L1440,32L1440,0L720,0L0,0Z"></path></svg>
+	<svg class="-mt-5 mb-10 md:mb-0 md:-mt-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f8fafc" fill-opacity="1" d="M0,128L720,160L1440,64L1440,0L720,0L0,0Z"></path></svg>
 
-	<section class="mb-32 text-gray-800 p-5" id="event">
+	<section class="mb-32 -mt-16 text-gray-800 p-5" id="event">
 
 		<h2 class="text-3xl md:text-4xl font-black mb-12 text-center">Event</h2>
 		<div class="grid lg:grid-cols-3 gap-6">
@@ -58,8 +59,8 @@
 		
 		</div>
 
-  </section>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f8fafc" fill-opacity="1" d="M0,64L480,160L960,64L1440,96L1440,320L960,320L480,320L0,320Z"></path></svg>
+  	</section>
+  	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f8fafc" fill-opacity="1" d="M0,64L480,160L960,64L1440,96L1440,320L960,320L480,320L0,320Z"></path></svg>
 
 
 	<section class="text-gray-800 p-5 text-center bg-slate-50">
@@ -299,7 +300,7 @@
 				<div class="flex align-start">
 					<div class="shrink-0">
 					<div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
-						<i class="fa text-white text-xl fa-user-shield"></i>
+						<i class="fa text-white pl-1 text-xl fa-user-shield"></i>
 					</div>
 					</div>
 					<div class="grow ml-6">

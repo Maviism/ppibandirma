@@ -51,6 +51,7 @@
                     </div>
                 </div>
             </a>
+            @auth
             @if($status->user_id == Auth::user()->id)
             <div class="flex items-center justify-end w-full">
                 <form action="">
@@ -59,6 +60,7 @@
                 </form>
             </div>
             @endif
+            @endauth
         </div>
         <div class="pl-16 pr-2">
             <p class="text-base width-auto font-medium text-black-800 flex-shrink">

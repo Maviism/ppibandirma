@@ -46,6 +46,10 @@ Route::get('/finance', function () {
     return view('finance');
 });
 
+Route::get('/community-guidelines', function(){
+    return view('community-guidelines');
+});
+
 
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'
