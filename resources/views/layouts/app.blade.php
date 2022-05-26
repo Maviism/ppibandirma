@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <meta name="description" content="PPI Bandirma is organization of indonesian student who study in Bandirma, Türkiye">
+        <meta name="description" content="Perhimpunan Pelajar Indonesia Bandirma adalah salah satu bentuk organisasi yang bernaung di tingkat yang berfungsi sebagai sarana untuk mewujudkan karya - karya yang bermutu selain hal - hal yang didapat dari kegiatan lain.">
+        <meta name="keywords" content="PPI Bandirma, PPI Turki">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
