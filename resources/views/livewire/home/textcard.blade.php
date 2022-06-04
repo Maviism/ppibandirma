@@ -4,6 +4,7 @@
     <!-- Post -->
     @auth
     <form wire:submit.prevent="store">
+    @csrf
     <div>
         <div class="flex">
             <div class="m-2 w-10 py-1">
@@ -54,9 +55,9 @@
             @auth
             @if($status->user_id == Auth::user()->id)
             <div class="flex items-center justify-end w-full">
-                <form action="">
-                    <button class="text-gray-600 font-bold">x</button>
-
+                <form wire:submit.prevent="destroy({{$status->id}})">
+                @csrf
+                    <button type="submit" class="text-gray-600 font-bold">x</button>
                 </form>
             </div>
             @endif

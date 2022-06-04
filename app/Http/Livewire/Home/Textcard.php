@@ -24,7 +24,8 @@ class Textcard extends Component
     ];
 
     protected $listeners = [
-        'statusCreated'
+        'statusCreated',
+        'statusDestroyed'
     ];
 
     public function likeStatus($id){
@@ -72,6 +73,16 @@ class Textcard extends Component
     }
 
     public function statusCreated($id){
+        $this->statuses = Status::orderBy('id', 'desc')->get();
+    }
+
+    public function destroy($id){
+        Status::destroy($id);
+
+        $this->emit('statusDestroyed');
+    }
+
+    public function statusDestroyed(){
         $this->statuses = Status::orderBy('id', 'desc')->get();
     }
 

@@ -5,7 +5,7 @@
 		<div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed" style="background-color: rgba(0, 0, 0, 0.75);">
 			<div class="flex justify-center items-center h-full">
 				<div class="text-center text-white px-6 md:px-12">
-					<h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12 leading-tight">Welcome, You're visiting <span class="text-sky-600">PPI&nbsp;Bandirma</span> area</h1>
+					<h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12 leading-tight">Welcome, You're visiting <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-pink-600">PPI&nbsp;Bandirma</span> area</h1>
 					<a class="inline-block px-7 py-3 mr-1.5 border-2 border-white text-white font-medium text-sm leading-snug uppercase rounded-full shadow-md hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Login</a>
 					<a class="inline-block px-7 py-3 border-2 border-transparent bg-transparent text-white font-medium text-sm leading-snug uppercase rounded-full focus:outline-none focus:ring-0 transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#event" role="button">Our Event</a>
 				</div>
@@ -124,20 +124,7 @@
 				</div>
 				</div>
 			</div>
-			<div class="mb-12">
-				<div class="rounded-lg shadow-lg h-full block bg-white">
-				<div class="flex justify-center">
-					<div class="rounded-full shadow-lg inline-block -mt-8">
-						<img src="/logo.png" class=" w-24 h-24 rounded-full object-cover" alt="">
-					</div>
-				</div>
-				<div class="p-6">
-					<h3 class="text-2xl font-bold text-blue-600">Alif Riski Ameliani Saufika</h3>
-					<h5 class="text-lg font-medium mb-4 text-gray-500">Kadiv Admin Keuangan</h5>
-					<q class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vero corporis aliquid dolore fugit fugiat?</q>
-				</div>
-				</div>
-			</div>
+
 
 			<div class="mb-12">
 				<div class="rounded-lg shadow-lg h-full block bg-white">
