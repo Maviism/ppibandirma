@@ -32,6 +32,23 @@ class Event extends Model
         return $dt->isoFormat('dddd, D MMMM Y');
     }
 
+    public function dates(){
+        $dt = Carbon::parse($this->attributes['date']);
+        return $dt->isoFormat('Y-m-d H:i');
+    }
+
+    public function getTime(){
+
+    }
+
+    public function getLatestEvent(){
+
+    }
+
+    public function getUpcomingEvent(){
+
+    }
+
     public function limitText(){
         return Str::limit($this->description, Event::LIMIT);
     }

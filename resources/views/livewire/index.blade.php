@@ -78,7 +78,7 @@
 				<div class="p-6">
 					<h3 class="text-2xl font-bold text-blue-600">Muhammad Hafidz Ramadhani</h3>
 					<h5 class="text-lg font-medium mb-4 text-gray-500">Ketua</h5>
-					<q class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vero corporis aliquid dolore fugit fugiat?</q>
+					<q class="text-gray-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vero corporis aliquid dolore fugit fugiat?</q>
 				</div>
 				</div>
 			</div>
@@ -92,7 +92,7 @@
 				<div class="p-6">
 					<h3 class="text-2xl font-bold text-blue-600">Abdullah Azzam Al-Mujahidin</h3>
 					<h5 class="text-lg font-medium mb-4 text-gray-500">Wakil ketua</h5>
-					<q class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vero corporis aliquid dolore fugit fugiat?</q>
+					<q class="text-gray-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vero corporis aliquid dolore fugit fugiat?</q>
 				</div>
 				</div>
 			</div>
@@ -100,13 +100,13 @@
 				<div class="rounded-lg shadow-lg h-full block bg-white">
 				<div class="flex justify-center">
 					<div class="rounded-full shadow-lg inline-block -mt-8">
-						<img src="/images/teams/sekjen.jpeg" class=" w-24 h-24 rounded-full object-cover" alt="">
+						<img src="/images/teams/ayyass.jpeg" class=" w-24 h-24 rounded-full object-cover" alt="">
 					</div>
 				</div>
 				<div class="p-6">
 					<h3 class="text-2xl font-bold text-blue-600">Muhammad Ayyaasy</h3>
 					<h5 class="text-lg font-medium mb-4 text-gray-500">Sekretaris Jendral</h5>
-					<q class="text-gray-500">Tuhan pasti punya jalan untuk kita, tapi belom di cor aja</q>
+					<q class="text-gray-800">Tuhan pasti punya jalan untuk kita, tapi belom di cor aja</q>
 				</div>
 				</div>
 			</div>
@@ -120,7 +120,7 @@
 				<div class="p-6">
 					<h3 class="text-2xl font-bold text-blue-600">Siti Qorri Ardianti</h3>
 					<h5 class="text-lg font-medium mb-4 text-gray-500">Bendahara Umum</h5>
-					<q class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vero corporis aliquid dolore fugit fugiat?</q>
+					<q class="text-gray-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vero corporis aliquid dolore fugit fugiat?</q>
 				</div>
 				</div>
 			</div>
@@ -136,7 +136,7 @@
 				<div class="p-6">
 					<h3 class="text-2xl font-bold text-blue-600">Ridho Muhammad</h3>
 					<h5 class="text-lg font-medium mb-4 text-gray-500">Kadiv Advokasi dan Hubungan Masyarakat</h5>
-					<q class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vero corporis aliquid dolore fugit fugiat?</q>
+					<q class="text-gray-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vero corporis aliquid dolore fugit fugiat?</q>
 				</div>
 				</div>
 			</div>
@@ -145,13 +145,13 @@
 				<div class="rounded-lg shadow-lg h-full block bg-white">
 				<div class="flex justify-center">
 					<div class="rounded-full shadow-lg inline-block -mt-8">
-						<img src="/logo.png" class=" w-24 h-24 rounded-full object-cover" alt="">
+						<img src="/images/teams/ghifari.jpg" class=" w-24 h-24 rounded-full object-cover" alt="">
 					</div>
 				</div>
 				<div class="p-6">
 					<h3 class="text-2xl font-bold text-blue-600">Gifari Madyan Isnaini</h3>
 					<h5 class="text-lg font-medium mb-4 text-gray-500">Kadiv Akastrat</h5>
-					<q class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vero corporis aliquid dolore fugit fugiat?</q>
+					<q class="text-gray-800">Jangan lupa minum Air putih</q>
 				</div>
 				</div>
 			</div>
@@ -165,7 +165,7 @@
 				<div class="p-6">
 					<h3 class="text-2xl font-bold text-blue-600">Khilmi Kurnia Alfata</h3>
 					<h5 class="text-lg font-medium mb-4 text-gray-500">Kadiv Minat Bakat dan Budaya</h5>
-					<q class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vero corporis aliquid dolore fugit fugiat?</q>
+					<q class="text-gray-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vero corporis aliquid dolore fugit fugiat?</q>
 				</div>
 				</div>
 			</div>
@@ -173,13 +173,13 @@
 				<div class="rounded-lg shadow-lg h-full block bg-white">
 				<div class="flex justify-center">
 					<div class="rounded-full shadow-lg inline-block -mt-8">
-						<img src="/logo.png" class=" w-24 h-24 rounded-full object-cover" alt="">
+						<img src="/images/teams/salsa.JPEG" class=" w-24 h-24 rounded-full object-cover" alt="">
 					</div>
 				</div>
 				<div class="p-6">
 					<h3 class="text-2xl font-bold text-blue-600">Salsabila Aisyah Putri</h3>
 					<h5 class="text-lg font-medium mb-4 text-gray-500">Kadiv Agama</h5>
-					<q class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vero corporis aliquid dolore fugit fugiat?</q>
+					<q class="text-gray-800">Hakikat kebahagiaan adalah, menjadi manusia yang ikhlas dengan kegilaannya. untuk teori paling tidak warasnya dunia, yaitu syurga</q>
 				</div>
 				</div>
 			</div>
@@ -187,13 +187,13 @@
 				<div class="rounded-lg shadow-lg h-full block bg-white">
 				<div class="flex justify-center">
 					<div class="rounded-full shadow-lg inline-block -mt-8">
-						<img src="/logo.png" class=" w-24 h-24 rounded-full object-cover" alt="">
+						<img src="/images/teams/rayhan.jpeg" class=" w-24 h-24 rounded-full object-cover" alt="">
 					</div>
 				</div>
 				<div class="p-6">
 					<h3 class="text-2xl font-bold text-blue-600">Muahmmad Rayhan Najib</h3>
 					<h5 class="text-lg font-medium mb-4 text-gray-500">Kadiv Informasi dan Komunikasi</h5>
-					<q class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vero corporis aliquid dolore fugit fugiat?</q>
+					<q class="text-gray-800">The pursuit of happyness, minute 55:45</q>
 				</div>
 				</div>
 			</div>
@@ -201,13 +201,13 @@
 				<div class="rounded-lg shadow-lg h-full block bg-white">
 				<div class="flex justify-center">
 					<div class="rounded-full shadow-lg inline-block -mt-8">
-						<img src="/logo.png" class=" w-24 h-24 rounded-full object-cover" alt="">
+						<img src="/images/teams/sahal.JPG" class=" w-24 h-24 rounded-full object-cover" alt="">
 					</div>
 				</div>
 				<div class="p-6">
 					<h3 class="text-2xl font-bold text-blue-600">Muahmmad Sahal Khadafi</h3>
 					<h5 class="text-lg font-medium mb-4 text-gray-500">Kadiv Sosial Pengabdian Masyarakat</h5>
-					<q class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vero corporis aliquid dolore fugit fugiat?</q>
+					<q class="text-gray-800">Jangan lupa sama orang tua</q>
 				</div>
 				</div>
 			</div>
@@ -215,13 +215,13 @@
 				<div class="rounded-lg shadow-lg h-full block bg-white">
 				<div class="flex justify-center">
 					<div class="rounded-full shadow-lg inline-block -mt-8">
-						<img src="/logo.png" class=" w-24 h-24 rounded-full object-cover" alt="">
+						<img src="/images/teams/akmal.jpeg" class=" w-24 h-24 rounded-full object-cover" alt="">
 					</div>
 				</div>
 				<div class="p-6">
 					<h3 class="text-2xl font-bold text-blue-600">Muahmmad Akmal Maulana</h3>
 					<h5 class="text-lg font-medium mb-4 text-gray-500">Kadiv Wirausaha</h5>
-					<q class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vero corporis aliquid dolore fugit fugiat?</q>
+					<q class="text-gray-800">Jangan nyerah, yang capek bukan lu doang</q>
 				</div>
 				</div>
 			</div>

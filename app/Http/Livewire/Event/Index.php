@@ -10,7 +10,10 @@ class Index extends Component
     public function render()
     {
         return view('livewire.event.index' , [
-            'events' => Event::all()
+            'events' => Event::all(),
+            'upcomingEvents' => Event::where('date', '>', date('Y-m-d H:i'))->get()
         ]);
     }
 }
+
+

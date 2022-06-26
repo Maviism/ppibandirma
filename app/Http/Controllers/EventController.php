@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class EventController extends Controller
 {
@@ -25,12 +26,15 @@ class EventController extends Controller
     public function store(Request $request)
     {   
         $request->validate([
-            'eventName' => 'required|max:255|numeric',
+            'eventName' => 'required|max:255',
             'eventPlace' => 'nullable',
-            'eventDate' => 'nullable|date',
+            'eventDate' => 'nullable',
             'thumbnail' => 'nullable',
             'description' => 'nullable',
         ]);
+
+        $dateInput = str_replace('/', '-', $request->eventDate);
+        $date = date('Y-m-d h:i', strtotime($dateInput));
 
         if($request->hasFile('image')){
             $image = $request->file('image');
@@ -40,8 +44,9 @@ class EventController extends Controller
 
             Event::create([
                 'event_name' => $request->eventName,
+                'slug' => Str::slug($request->eventName),
                 'place' => $request->eventPlace,
-                'date' => $request->eventDate,
+                'date' => $date,
                 'thumbnail' => $file_name, 
                 'description' => $request->description,
             ]);
@@ -49,8 +54,9 @@ class EventController extends Controller
         }else{
             Event::create([
                 'event_name' => $request->eventName,
+                'slug' => Str::slug($request->eventName),
                 'place' => $request->eventPlace,
-                'date' => $request->eventDate, 
+                'date' => $date, 
                 'description' => $request->description,
             ]);
         }

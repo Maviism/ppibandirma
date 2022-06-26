@@ -2,6 +2,9 @@
     <div class="container px-4 flex-grow w-full py-4 sm:py-10 mx-auto px-0">
       <h1 class="text-center font-bold tracking-wider text-3xl mb-4 uppercase text-gray-700 mx-auto px-2">
         Event
+        @foreach($upcomingEvents as $upEvent)
+              {{ $upEvent->event_name }}
+              @endforeach
       </h1>
       <div class="mx-auto w-full md:w-4/5 px-4">
         <div class="container my-8 px-2 pb-1 shadow-xl">
@@ -13,9 +16,10 @@
           </div>
           <!-- Item -->
           <div id="scrollContainer" class="flex flex-no-wrap overflow-x-scroll no-scrollbar scrolling-touch items-start mb-8">
-            @if($events != null)
+            @if($upcomingEvents != null)
+              
               @foreach($events as $event)
-              @if((strtotime($event->date) < strtotime(date('d-m-Y h:i'))) != null)
+              @if((strtotime($event->date) > strtotime(date('d-m-Y H:i'))) != null)
               <div class="flex-none w-2/3 md:w-1/3 mr-8 border rounded-lg shadow-xl border-2 border-black">
                 <div href="#" class="space-y-4">
                   <div class="aspect-w-16 aspect-h-9 relative">
@@ -72,7 +76,7 @@
           <!-- Item -->
           <div class="grid grid-cols-2 md:grid-cols-4 ">
             @foreach($events as $event)
-            @if(strtotime($event->date) > strtotime(date('d-m-Y h:i')))
+            @if(strtotime($event->date) < strtotime(date('d-m-Y h:i')))
             
               <div class="flex-none m-1 md:m-2 border bg-white rounded-lg">
                 <div href="#" class="space-y-4">

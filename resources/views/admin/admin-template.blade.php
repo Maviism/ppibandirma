@@ -107,6 +107,8 @@
 <script src="/lte/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="/lte/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="/lte/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+
 <script>
   $(function () {
     $("#example1").DataTable({
@@ -126,7 +128,7 @@
     //Date and time picker
     $('#reservationdatetime').datetimepicker({ 
       icons: { time: 'far fa-clock' },
-      format: 'DD-MM-YYYY HH:mm', 
+      format: 'DD/MM/YYYY HH:mm', 
     });
     
   });

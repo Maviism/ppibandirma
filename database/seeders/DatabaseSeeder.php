@@ -85,7 +85,7 @@ class DatabaseSeeder extends Seeder
             'event_name' => "Jumat berkah",
             'slug' => "jumat-berkah",
             'place' => "Rumah fulan",
-            'date' => '08-01-2023 11:00',
+            'date' => now(),
             'thumbnail' => "jumber.jpeg",
             'description' => "Masukan <em>deskripsi</em> <u>acara</u> <strong>disini</strong>"
         ]);
@@ -94,25 +94,27 @@ class DatabaseSeeder extends Seeder
             'event_name' => "Podcast PPI BANDIRMA",
             'slug' => 'podcast-ppi-bandirma',
             'place' => "Spotify",
-            'date' => '04-08-2022 15:00',
+            'date' => now(),
             'thumbnail' => "podcast.jpeg",
             'description' => "Masukan <em>deskripsi</em> <u>acara</u> <strong>disini</strong>"
         ]);
 
-        Event::create([
-            'event_name' => "MALAM TAKBIRAN BERSAMA PPI TURKI",
-            'slug' => "malam-takbiran-bersama-ppi-turki",
-            'place' => "Zoom meeting",
-            'date' => '26-01-2022 12:00',
-            'thumbnail' => "takbiran.jpeg",
-            'description' => "Masukan <em>deskripsi</em> <u>acara</u> <strong>disini</strong>"
-        ]);
+        // Event::create([
+        //     'event_name' => "MALAM TAKBIRAN BERSAMA PPI TURKI",
+        //     'slug' => "malam-takbiran-bersama-ppi-turki",
+        //     'place' => "Zoom meeting",
+        //     'date' => now(),
+        //     'thumbnail' => "takbiran.jpeg",
+        //     'description' => "Masukan <em>deskripsi</em> <u>acara</u> <strong>disini</strong>"
+        // ]);
 
+        $input = '26/10/2011 19:00';
+        $rep_input = str_replace('/', '-', $input); 
         Event::create([
             'event_name' => "Yuk kita sahurrr",
             'slug' => "yuk-kita-sahurrr",
             'place' => "Zoom meeting",
-            'date' => '16-03-2022 12:00',
+            'date' => date('Y-m-d h:i', strtotime($rep_input)),
             'thumbnail' => "yks.jpeg",
             'description' => "Masukan <em>deskripsi</em> <u>acara</u> <strong>disini</strong>"
         ]);
