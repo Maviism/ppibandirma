@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Comment;
 use App\Models\Event;
+use App\Models\NipCounter;
 use App\Models\Opinion;
 use App\Models\Status;
 use App\Models\User;
@@ -21,26 +22,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        $user = User::create([
-            'name' => "Admin web",
-            'email' => "admin@gmail.com",
-            'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'remember_token' => Str::random(10),
-            'role' => 'admin',
-        ]);
-
-        $user->identity()->create([
-            'faculty' => 'teknik komputer',
-            'gender' => 'laki',
-            'university' => 'Bandirma onyedi eylul',
-            'married' => 'sudah',
-            'student_no' => '201502208',
-            'date_of_birth' => '20/20/1999',
-            'phone_number' => '905525911215',
-            'user_id' => $user->id,
-        ]);
-
         $user1 = User::create([
             'name' => "Super admin",
             'email' => "super-admin@gmail.com",
@@ -52,7 +33,7 @@ class DatabaseSeeder extends Seeder
 
         $user1->identity()->create([
             'faculty' => 'teknik komputer',
-            'gender' => 'laki',
+            'gender' => 'l',
             'phone_number' => '905525911215',
             'user_id' => $user1->id,
             'date_of_birth' => '20/20/1999',
@@ -61,25 +42,6 @@ class DatabaseSeeder extends Seeder
             'student_no' => '201502209',
         ]);
 
-        $user2 = User::create([
-            'name' => "warga biasa",
-            'email' => "user@gmail.com",
-            'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'remember_token' => Str::random(10),
-            'role' => 'user',
-        ]);
-
-        $user2->identity()->create([
-            'faculty' => 'teknik komputer',
-            'gender' => 'laki',
-            'phone_number' => '905525911215',
-            'user_id' => $user2->id,
-            'date_of_birth' => '20/20/1999',
-            'university' => 'Bandirma onyedi eylul',
-            'married' => 'sudah',
-            'student_no' => '201502210',
-        ]);
 
         Event::create([
             'event_name' => "Jumat berkah",
@@ -135,6 +97,15 @@ class DatabaseSeeder extends Seeder
             'user_id' => 1,
             'status_id' => 1,
         ]);
+
+        $nipyear = [
+            ['year' => '2018'],
+            ['year' => '2019'], 
+            ['year' => '2020'], 
+            ['year' => '2021'],
+            ['year' => '2022']
+        ];
+        NipCounter::insert($nipyear);
 
 
     }

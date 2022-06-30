@@ -62,6 +62,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'),'verified'
 Route::middleware(['auth', 'role:admin,super-admin', 'verified'])->group(function(){
     Route::get('/admin', [DashboardController::class, 'index']);
     
+    
     Route::resource('/admin/event', EventController::class)->except('show');
     Route::resource('/admin/finance', FinanceController::class)->except('show');
     Route::resource('/admin/member', UserController::class)->except(['show', 'edit', 'update']);
@@ -69,7 +70,9 @@ Route::middleware(['auth', 'role:admin,super-admin', 'verified'])->group(functio
 });
 
 Route::middleware(['auth', 'role:super-admin', 'verified'])->group(function(){
+    Route::get('/admin/member/export', [UserController::class, 'export_user']);
     Route::post('/admin/member/import-excel', [UserController::class, 'import_excel']);
+    
     Route::get('/admin/member/{id}/edit', [UserController::class, 'edit'])->name('member.edit');
     Route::put('/admin/member/{id}', [UserController::class, 'update'])->name('member.update');
     Route::post('/activate/{user}', [UserController::class, 'activate'])->name('member.activate');

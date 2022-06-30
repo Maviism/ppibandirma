@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Imports\UserImport;
+use App\Exports\UserExport;
+
 use App\Mail\UserActivate;
+
 use App\Models\Identity;
 use App\Models\User;
-use Carbon\Carbon;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
@@ -172,4 +175,9 @@ class UserController extends Controller
         Session::flash('sukses', 'Email terkirim');
         return redirect()->back();
     }
+
+    public function export_user(){
+        return Excel::download(new UserExport, 'PPI Bandirma.xlsx');
+    }
+
 }

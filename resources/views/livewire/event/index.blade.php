@@ -11,12 +11,15 @@
           <div class="flex justify-between items-center mb-4">
             <h2 class="text-3xl font-medium">
               Upcoming Event
+              <!-- @if($upcomingEvents != null) 
+              Hello
+              @endif -->
             </h2>
             
           </div>
           <!-- Item -->
           <div id="scrollContainer" class="flex flex-no-wrap overflow-x-scroll no-scrollbar scrolling-touch items-start mb-8">
-            @if($upcomingEvents != null)
+            @if($upcomingEvents != NULL)
               
               @foreach($events as $event)
               @if((strtotime($event->date) > strtotime(date('d-m-Y H:i'))) != null)
@@ -54,7 +57,7 @@
               @endif
               @endforeach
             @else
-              <div class="flex-none w-2/3 md:w-1/3 mr-8 border rounded-lg shadow-xl border-2 border-black">Not Available</div>
+              <div class="flex-none  w-2/3 md:w-1/3 mr-8 border rounded-lg shadow-xl border-2 border-black">Not Available</div>
             @endif
 
             
@@ -76,7 +79,7 @@
           <!-- Item -->
           <div class="grid grid-cols-2 md:grid-cols-4 ">
             @foreach($events as $event)
-            @if(strtotime($event->date) < strtotime(date('d-m-Y h:i')))
+            @if(strtotime($event->date) <= strtotime(date('d-m-Y h:i')))
             
               <div class="flex-none m-1 md:m-2 border bg-white rounded-lg">
                 <div href="#" class="space-y-4">

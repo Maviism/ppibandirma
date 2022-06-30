@@ -5,7 +5,7 @@
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
-  {{ config('app.url') }}
+  
       <div class="container-fluid">
         @if (session('status'))
             <div class="alert alert-success alert-dismissible">
@@ -49,9 +49,9 @@
               <!-- /.card-header -->
               <div class="card-body">
                 @if(Auth::user()->role == "super-admin")
-                <a href="{{route('member.create')}}" class="btn btn-primary mb-2">Add Member</a>
+                <button href="{{route('member.create')}}" class="btn btn-primary mb-2" disabled>Add Member</button>
                 <button class="btn btn-primary mb-2" data-toggle="modal" data-target="#importExcel">Import</button>
-                <button class="btn btn-primary mb-2" data-toggle="modal" data-target="#importExcel" disabled>Export</button>
+                <a class="btn btn-info mb-2" href="/admin/member/export">Download data</a>
                 @endif
 
                 <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -64,9 +64,9 @@
                         <div class="modal-body">
             
                           {{ csrf_field() }}
-            
+
+                          <p><a href="">Panduan</a> | <a href="{{ config('app.url') }}/tmplt/template_ppibandirma.xlsx" download>download template file</a></p>
                           <label>Pilih file excel</label>
-                          <p>name|email|gender|married|religion|blood_type|date_of_birth|phone_number|parent_number|university|faculty|departman|arrival_year|student_no|address_tr</p>
                           <div class="form-group">
                             <input type="file" name="file" required="required">
                           </div>

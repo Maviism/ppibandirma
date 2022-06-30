@@ -15,19 +15,24 @@ return new class extends Migration
     {
         Schema::create('identities', function (Blueprint $table) {
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->enum('gender', ['laki', 'perempuan']);
+            $table->string('nip')->unique()->nullable();
+            $table->string('place_of_birth')->nullable();
+            $table->string('date_of_birth');
+            $table->enum('gender', ['l', 'p']);
+            $table->string('phone_number')->nullable();
             $table->enum('married', ['sudah', 'belum']);
-            $table->string('religion')->nullable();
-            $table->text('date_of_birth');
-            $table->string('blood_type')->nullable();
-            $table->string('phone_number');
-            $table->string('parent_phone_number')->nullable();
-            $table->string('arrival_year')->nullable();
-            $table->string('student_no')->unique();
-            $table->string('university');
+            $table->string('educational_type')->nullable();//Master, sarjana
+            $table->string('university')->nullable();
             $table->string('faculty')->nullable();
             $table->string('departman')->nullable();
+            $table->string('arrival_year')->nullable();
+            $table->string('graduate_year')->nullable();
+            $table->string('religion')->nullable();
+            $table->string('blood_type')->nullable();
             $table->string('address_tr')->nullable();
+            $table->string('provincial_origin')->nullable();//asal provinsi
+            $table->string('parent_phone_number')->nullable();
+            $table->string('student_no')->nullable()->unique();
             $table->timestamps();
         });
     }

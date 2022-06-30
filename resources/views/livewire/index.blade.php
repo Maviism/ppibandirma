@@ -22,7 +22,7 @@
 				Your browser does not support the audio tag.
 			</audio>
 		</div>
-		<p class="font-black text-transparent bg-clip-text bg-gradient-to-b from-red-600 to-gray-400 p-3">Hymne PPI Turki - Persembahan PPI Turki Kabinet Bumi Inspirasi 2021-2022</p>
+		<p class="font-black text-transparent bg-clip-text bg-gradient-to-b from-red-600 to-gray-400 p-3">Hymne PPI Turki</p>
 		<div class="flex justify-center mb-5">
 			<audio controls>
 				<source src="/hymne-ppi-turki.mp3" type="audio/mpeg">
@@ -164,7 +164,7 @@
 				</div>
 				<div class="p-6">
 					<h3 class="text-2xl font-bold text-blue-600">Khilmi Kurnia Alfata</h3>
-					<h5 class="text-lg font-medium mb-4 text-gray-500">Kadiv Minat Bakat dan Budaya</h5>
+					<h5 class="text-md font-medium mb-4 text-gray-500">Kadiv Minat Bakat dan Budaya</h5>
 					<q class="text-gray-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam vero corporis aliquid dolore fugit fugiat?</q>
 				</div>
 				</div>
@@ -191,7 +191,7 @@
 					</div>
 				</div>
 				<div class="p-6">
-					<h3 class="text-2xl font-bold text-blue-600">Muahmmad Rayhan Najib</h3>
+					<h3 class="text-2xl font-bold text-blue-600">Muhammad Rayhan Najib</h3>
 					<h5 class="text-lg font-medium mb-4 text-gray-500">Kadiv Informasi dan Komunikasi</h5>
 					<q class="text-gray-800">The pursuit of happyness, minute 55:45</q>
 				</div>
@@ -233,15 +233,10 @@
 
 		
 	</section>
-	<svg class="-mt-15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f8fafc" fill-opacity="1" d="M0,64L480,192L960,128L1440,96L1440,0L960,0L480,0L0,0Z"></path></svg>
 
-	<section class="text-gray-800 p-5 text-center">
-		<h2 class="text-3xl md:text-4xl font-bold mb-20">Extracurricular</h2>
 
-	</section>
-
-	<section class="text-gray-800 ">
-		<div class="block rounded-lg shadow-lg bg-slate-50">
+	<section class="text-gray-800">
+		<div class="block rounded-lg shadow-lg ">
 		<div class="flex flex-wrap items-center">
 			<div class="p-10 basis-auto block w-full lg:flex lg:w-6/12 xl:w-4/12">
 				<div class="">
@@ -321,12 +316,6 @@
 		</div>
 		</div>
 	</section>
-
-
-
-
-	
-
     
 </div>
 

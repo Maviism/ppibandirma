@@ -15,12 +15,13 @@ class Textcard extends Component
     public $show_name = 0;
 
     protected $rules = [
-        'status' => 'required|min:3',
+        'status' => 'required|min:3|max:255',
     ];    
 
     protected $messages = [
         'status.required' => 'Kamu belum menulis status.',
         'status.min' => 'Status minimal mengandung 3 kata.',
+        'status.max' => 'Curhatan kamu tidak boleh lebih dari 255 karakter'
     ];
 
     protected $listeners = [

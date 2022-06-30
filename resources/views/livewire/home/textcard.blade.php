@@ -64,7 +64,7 @@
             @endauth
         </div>
         <div class="pl-16 pr-2">
-            <p class="text-base width-auto font-normal text-black-800 flex-shrink">
+            <p class="text-base width-auto font-normal text-black-800 flex-shrink break-words">
                 {{$status->status}}
             </p>
             <div class="flex">
